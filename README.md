@@ -79,7 +79,6 @@ timesでPRしたりアップデートしたら自身のtimesチャンネルやX�
 ・MVPリリース時に作っていたいもの
 検索作品検索機能、作品詳細機能、作品一覧表示機能
 レビュー投稿機能、レビュー編集機能、レビュー削除機能
-コメント機能
 
 ・本リリース
 レコメンド機能
@@ -95,3 +94,6 @@ timesでPRしたりアップデートしたら自身のtimesチャンネルやX�
 観たい！ボタンと観たよ！ボタンを押した人が何人いるか分かる機能：public_activity
 レコメンド機能：GCP Recommendations AI
 検索機構：ransack
+
+### 画面遷移図
+Figma：https://www.figma.com/design/j8l654IioatkAUz10JWezL/%E3%81%93%E3%81%BF%E3%81%A6%E3%82%89%E3%81%A3%EF%BC%81?node-id=0-1&node-type=canvas&t=rqjJpxqFSBs8SmYo-0
