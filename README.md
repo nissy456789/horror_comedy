@@ -100,4 +100,4 @@ Figma：https://www.figma.com/design/j8l654IioatkAUz10JWezL/%E3%81%93%E3%81%BF%E
 
 
 ### ER図
-https://i.gyazo.com/764ca58b1ec771d4a84c1e4c2d3712e1.png
+https://i.gyazo.com/4e4daf2d1a5ebfe235fa895b52ae5ddc.png
