@@ -97,3 +97,7 @@ timesでPRしたりアップデートしたら自身のtimesチャンネルやX�
 
 ### 画面遷移図
 Figma：https://www.figma.com/design/j8l654IioatkAUz10JWezL/%E3%81%93%E3%81%BF%E3%81%A6%E3%82%89%E3%81%A3%EF%BC%81?node-id=0-1&node-type=canvas&t=rqjJpxqFSBs8SmYo-0
+
+
+### ER図
+https://i.gyazo.com/764ca58b1ec771d4a84c1e4c2d3712e1.png
