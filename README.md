@@ -90,7 +90,7 @@ timesでPRしたりアップデートしたら自身のtimesチャンネルやX�
 　
 ■ 機能の実装方針予定
 一般的なCRUD以外の実装予定の機能についてそれぞれどのようなイメージ(使用するAPIや)で実装する予定なのか現状考えているもので良いので教えて下さい。
-ログイン機能：sorcery
+ログイン機能：device
 観たい！ボタンと観たよ！ボタンを押した人が何人いるか分かる機能：public_activity
 レコメンド機能：GCP Recommendations AI
 検索機構：ransack
@@ -100,4 +100,4 @@ Figma：https://www.figma.com/design/j8l654IioatkAUz10JWezL/%E3%81%93%E3%81%BF%E
 
 
 ### ER図
-https://i.gyazo.com/4e4daf2d1a5ebfe235fa895b52ae5ddc.png
+![](https://i.gyazo.com/4e4daf2d1a5ebfe235fa895b52ae5ddc.png)
