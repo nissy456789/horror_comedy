@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'horror_comedys/top'
   # 環境構築の検証用
   resources :tasks
-  root 'tasks#index'
+  root 'horror_comedys#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

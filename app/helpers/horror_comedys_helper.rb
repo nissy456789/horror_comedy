@@ -1,0 +1,2 @@
+module HorrorComedysHelper
+end
