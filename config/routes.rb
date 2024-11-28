@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
+  #ログアウト用ルーティングです。turbo_methodがうまく機能しないため設定しました。
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   get 'horror_comedys/top'
   # 環境構築の検証用
   resources :tasks

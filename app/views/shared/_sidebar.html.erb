@@ -5,11 +5,8 @@
       <div class="inline-block bg-gray-400 px-2 py-1 text-white">検索</div>
     </li>
     <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-  <a href="/movies" class="inline-block bg-orange-500 px-2 py-1 text-black">
-    作品一覧
-  </a>
-</li>
-
+    <%= link_to "作品一覧", movies_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+  </li>  
     <li class="px-6 py-3 hover:bg-gray-100">
       <div class="inline-block bg-orange-500 px-2 py-1">ランキング</div>
     </li>
@@ -19,14 +16,31 @@
     <li class="px-6 py-3 hover:bg-gray-100">
       <div class="inline-block bg-orange-500 px-2 py-1">観たい！一覧</div>
     </li>
-    <li class="px-6 py-3 hover:bg-gray-100">
-      <div class="inline-block bg-orange-500 px-2 py-1">ログイン</div>
-    </li>
+
+    <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+        <%= link_to "ユーザー詳細画面",new_user_session_path , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      </li>
+
+      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+
+      </li>
+
+    <% else %>
+      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+        <%= link_to "新規登録",new_user_session_path , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      </li>
+
+      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+        <%= link_to "ログイン",user_session_path , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      </li>
+    <% end %>
     <li class="px-6 py-3 hover:bg-gray-100">
       <div class="inline-block bg-gray-400 px-2 py-1 text-white">お問い合わせ</div>
     </li>
     <li class="px-6 py-3 hover:bg-gray-100">
-      <div class="inline-block bg-gray-400 px-2 py-1 text-white">プライバシーポリシー</div>
+      <div class="inline-block bg-gray-400 px-2 py-1 text-white">プライバシーポリシ</div>
     </li>
   </ul>
 </div>
