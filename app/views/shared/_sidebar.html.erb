@@ -23,14 +23,12 @@
       </li>
 
       <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-
-      </li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+     
+        </li>
 
     <% else %>
-      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to "新規登録",new_user_session_path , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-      </li>
+
 
       <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
         <%= link_to "ログイン",user_session_path , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
