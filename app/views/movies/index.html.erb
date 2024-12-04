@@ -1,3 +1,8 @@
 <div class="flex items-center justify-center h-screen">
   <h1 class="text-4xl font-bold">作品一覧</h1>
 </div>
+
+<%= form_with model: @image, local: true do |form| %>
+  <%= form.file_field :file %>
+  <%= form.submit "Upload" %>
+<% end %>
