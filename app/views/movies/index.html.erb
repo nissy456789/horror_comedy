@@ -1,8 +1,22 @@
 <div class="flex items-center justify-center h-screen">
-  <h1 class="text-4xl font-bold">作品一覧</h1>
+<h1>映画一覧</h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <h2><%= movie.title %></h2>
+      <p><%= movie.description %></p>
+
+      <% if movie.images.attached? %>
+        <% movie.images.each do |image| %>
+          <%= image_tag image.variant(resize_to_limit: [300, 300]) %>
+        <% end %>
+      <% else %>
+        <p>No image available</p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>  
 </div>
 
-<%= form_with model: @image, local: true do |form| %>
-  <%= form.file_field :file %>
-  <%= form.submit "Upload" %>
-<% end %>
+
