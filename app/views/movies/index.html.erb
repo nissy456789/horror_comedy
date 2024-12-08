@@ -1,22 +1,15 @@
 <div class="flex items-center justify-center h-screen">
 <h1>映画一覧</h1>
 
-<ul>
+<ul class="flex list-none p-0">
   <% @movies.each do |movie| %>
-    <li>
-      <h2><%= movie.title %></h2>
-      <p><%= movie.description %></p>
-
-      <% if movie.images.attached? %>
-        <% movie.images.each do |image| %>
-          <%= image_tag image.variant(resize_to_limit: [300, 300]) %>
-        <% end %>
-      <% else %>
-        <p>No image available</p>
+    <li class="mr-2"> <!-- 画像の間隔を調整 -->
+      <% movie.images.each do |image| %>
+        <%= image_tag rails_blob_path(image, disposition: "inline"), class: "w-24 h-auto" %> <!-- 幅を指定 -->
       <% end %>
     </li>
   <% end %>
-</ul>  
+</ul>
 </div>
 
 
