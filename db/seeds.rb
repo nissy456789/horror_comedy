@@ -9,7 +9,7 @@ movie = Movie.create(
 )
 movie.images.attach([
   {
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'willyswonderland.jpg')),
+    io: File.open(Rails.root.join('app/assets/images/willyswonderland.jpg')),
     filename: 'willyswonderland.jpg',
     content_type: 'image/jpeg'
   }
@@ -21,7 +21,7 @@ movie = Movie.create(
 )
 movie.images.attach([
   {
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'londonzombiposter.jpg')),
+    io: File.open(Rails.root.join('app/assets/images/londonzombiposter.jpg')),
     filename: 'londonzombiposter.jpg',
     content_type: 'image/jpeg'
   }
@@ -33,7 +33,7 @@ movie = Movie.create(
 )
 movie.images.attach([
   {
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'kiryuunomura.jpg')),
+    io: File.open(Rails.root.join('app/assets/images/kiryuunomura.jpg')),
     filename: 'kiryuunomura.jpg',
     content_type: 'image/jpeg'
   }
