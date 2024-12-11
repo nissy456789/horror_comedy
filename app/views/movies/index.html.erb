@@ -1,13 +1,11 @@
 <div class="flex items-center justify-center h-screen">
-<h1>映画一覧</h1>
+  <h1>映画一覧</h1>
 
-<ul class="flex list-none p-0">
-  <% @movies.each do |movie| %>
-    <li class="mr-2"> <!-- 画像の間隔を調整 -->
-      <% movie.images.each do |image| %>
-        <%= image_tag rails_blob_path(image, disposition: "inline"), class: "w-24 h-auto" %> <!-- 幅を指定 -->
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <ul class="flex list-none p-0">
+    <% @movies.each do |movie| %>
+      <li class="mr-2"> <!-- 画像の間隔を調整 -->
+        <%= image_tag movie.avatar.url, class: "w-24 h-auto" %> <!-- CarrierWaveでアップロードされた画像を表示 -->
+      </li>
+    <% end %>
+  </ul>
 </div>
