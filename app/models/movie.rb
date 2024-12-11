@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  mount_uploader :avatar, AvatarUploader # `avatar`カラムをCarrierWaveに関連付け
+  # mount_uploader :avatar, AvatarUploader # コメントアウトまたは削除
   has_many :movie_categories
 
 
