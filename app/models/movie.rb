@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  # mount_uploader :avatar, AvatarUploader # コメントアウトまたは削除
+  mount_uploader :avatar, AvatarUploader
   has_many :movie_categories
 
 

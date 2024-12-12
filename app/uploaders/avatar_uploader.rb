@@ -1,5 +1,4 @@
 class AvatarUploader < CarrierWave::Uploader::Base
-
   if Rails.env.production?
     storage :fog # 本番環境ではfogを使用
   else
