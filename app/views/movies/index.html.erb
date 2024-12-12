@@ -1,11 +1,15 @@
 <div class="flex items-center justify-center h-screen">
   <h1>映画一覧</h1>
 
-  <ul class="flex list-none p-0">
-    <% @movies.each do |movie| %>
-      <li class="mr-2"> <!-- 画像の間隔を調整 -->
-       <%= image_tag movie.avatar.url if movie.avatar.present? %>
-      </li>
-    <% end %>
-  </ul>
+  <ul class="flex flex-wrap list-none p-0">
+  <% @movies.each do |movie| %>
+    <li class="mr-2 mb-2"> <!-- 画像間の余白を調整 -->
+      <% if movie.avatar.present? %>
+        <%= image_tag movie.avatar.url, 
+                      class: "w-40 h-40 object-cover " %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
 </div>
