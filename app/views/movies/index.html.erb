@@ -4,7 +4,7 @@
   <ul class="flex list-none p-0">
     <% @movies.each do |movie| %>
       <li class="mr-2"> <!-- 画像の間隔を調整 -->
-        <%= image_tag movie.avatar.url, class: "w-24 h-auto" %> <!-- CarrierWaveでアップロードされた画像を表示 -->
+       <%= image_tag movie.avatar.url if movie.avatar.present? %>
       </li>
     <% end %>
   </ul>
