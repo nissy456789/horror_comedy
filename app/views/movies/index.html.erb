@@ -5,9 +5,9 @@
     <% @movies.each do |movie| %>
       <li class="mr-2 mb-2"> <!-- 画像間の余白を調整 -->
         <% if movie.avatar.present? %>
-          <%= link_to movie_path(movie) do %> <!-- コードの可読性向上 --><!-- 画像をリンクにして詳細画面へ遷移する -->
+          <%= link_to movie_path(movie) do %> <!-- 画像をリンクにして詳細画面へ遷移する -->
             <%= image_tag movie.avatar.url,
-                          class: "w-40 h-40 object-cover" %>
+                          class: "w-40 h-40 object-contain" %>
           <% end %>
         <% end %>
       </li>

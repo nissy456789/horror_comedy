@@ -3,9 +3,9 @@
     <!-- サイドバーの内容 -->
   </div>
 
-<div class="flex-1 flex flex-col items-center justify-center text-center">
+  <div class="flex-1 flex flex-col items-center justify-center text-center">
     <div class="movie-image">
-      <%= image_tag @movie.avatar.url if @movie.avatar? %>
+      <%= image_tag @movie.avatar.url, class: 'w-64 h-64 object-contain' if @movie.avatar? %>
     </div>
 
     <h1 class="movie-title text-2xl font-bold mt-4"><%= @movie.title %></h1>
