@@ -4,9 +4,12 @@
   <ul class="flex list-none p-0">
     <% @movies.each do |movie| %>
       <li class="mr-2"> <!-- 画像の間隔を調整 -->
-        <%= image_tag movie.avatar, class: "w-24 h-auto" %> <!-- 直接URLを表示 -->
+        <% if Rails.env.production? %>
+          <%= image_tag movie.avatar, class: "w-24 h-auto" %> <!-- 本番環境: S3などに保存されたURL -->
+        <% else %>
+          <%= image_tag url_for(movie.avatar), class: "w-24 h-auto" %> <!-- ローカル環境: ActiveStorageのURL -->
+        <% end %>
       </li>
     <% end %>
   </ul>
 </div>
-
