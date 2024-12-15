@@ -1,11 +1,11 @@
-<div class="row mb-3" id="review-form">
-  <div class="col-lg-8 offset-lg-2">
+<div class="flex justify-center mb-3" id="review-form">
+  <div class="w-full max-w-lg absolute top-0 right-0 mt-4 mr-4">
     <%= form_with model: review, url: movie_reviews_path(movie) do |f| %>
       <div class="mb-4">
         <%= f.label :body, class: "block text-sm font-medium text-gray-700" %>
-        <%= f.text_area :body, class: "form-control mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50", rows: "4", placeholder: Review.human_attribute_name(:body) %>
+        <%= f.text_area :body, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50", rows: "4", placeholder: Review.human_attribute_name(:body) %>
       </div>
-      <%= f.submit t('defaults.post'), class: "btn btn-primary mt-2 inline-flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+      <%= f.submit '投稿', class: "mt-2 inline-flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
     <% end %>
   </div>
 </div>
