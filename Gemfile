@@ -57,7 +57,7 @@ gem 'devise'
 
 gem "aws-sdk-s3", require: false
 
-gem 'carrierwave', '2.2.2'
+gem 'carrierwave', '3.1.0'
 
 gem 'dotenv-rails'
 
