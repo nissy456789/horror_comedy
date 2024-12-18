@@ -19,7 +19,7 @@
   <%= button_tag '観たい！', type: 'button', class: 'btn btn-primary' %>
   </div>
   <% 'レビュー一覧' %>
-<%= render @reviews %>    <!-- コントローラーで取得した投稿されたレビューを表示 -->
+<%= render @reviews %>    <!-- 投稿されたレビューを表示 -->
   <% 'レビュー入力フォーム' %>
 <%= render 'reviews/form', review: @review, movie: @movie %>
 

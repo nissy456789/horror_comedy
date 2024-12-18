@@ -1,24 +1,28 @@
-<% @reviews.each do |review| %>
-    <tr id="review-<%= review.id %>">
-      <td>
-        <h3 class="small">名前</h3>
-        <p><%= simple_format(review.body) %></p>
-      </td>
-      <% if current_user.own?(review) %>
-        <td class="action">
-          <ul class="list-inline justify-content-center" style="float: right;">
-            <li class="list-inline-item">
-              <%= link_to "#", class: "edit-review-link" do %>
-                <i class="bi bi-pencil-fill"></i>
-              <% end %>
-            </li>
-            <li class="list-inline-item">
-              <%= link_to "#", class: "delete--link" do %>
-                <i class="bi bi-trash-fill"></i>
-              <% end %>
-            </li>
-          </ul>
+<div class="fixed bottom-0 right-0 bg-gray-300 p-3 rounded-md shadow-md">
+  <table>
+    <% @reviews.uniq(&:body).each do |review| %>
+      <tr id="review-<%= review.id %>">
+        <td>
+          <h3 class="small"><%= review.user.name %></h3>
+          <p><%= review.body %></p>
         </td>
-      <% end %>
-    </tr>
-  <% end %>
+        <% if current_user.own?(review) %>
+          <td class="action">
+            <ul class="list-inline justify-content-center" style="float: right;">
+              <li class="list-inline-item">
+                <%= link_to "#", class: "edit-review-link" do %>
+                  <i class="bi bi-pencil-fill"></i>
+                <% end %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to "#", class: "delete--link" do %>
+                  <i class="bi bi-trash-fill"></i>
+                <% end %>
+              </li>
+            </ul>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

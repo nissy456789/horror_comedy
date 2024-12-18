@@ -1,17 +1,19 @@
 class ReviewsController < ApplicationController
-  def create#レビュー作成
+  before_action :authenticate_user!
+
+  def create
     review = current_user.reviews.build(review_params)
     if review.save
-      redirect_to movie_path(review.movie), success: '投稿してくれてありがとう！', item: Review.model_name.human
+      redirect_to movie_path(review.movie), success: '投稿してくれてありがとう！'
     else
-      redirect_to movie_path(review.movie), danger: 'ごめん！投稿できてないみたい！', item: Review.model_name.human
+      redirect_to movie_path(review.movie), danger: '投稿に失敗しました。'
     end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content).merge(movie_id: params[:movie_id])
+    params.require(:review).permit(:body).merge(movie_id: params[:movie_id])
   end
 
 end
