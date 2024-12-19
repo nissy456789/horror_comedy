@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:body).merge(movie_id: params[:movie_id])
+    params.require(:review).permit(:body, :user_id, :user_name).merge(movie_id: params[:movie_id])
   end
 
 end
