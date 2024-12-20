@@ -3,24 +3,26 @@
     <!-- サイドバーの内容 -->
   </div>
 
-  <div class="flex-1 flex flex-col items-center justify-center text-center">
+  <div class="flex-1 flex flex-col items-center justify-center text-center text-white">
     <div class="movie-image">
       <%= image_tag @movie.avatar.url, class: 'w-64 h-64 object-contain' if @movie.avatar? %>
     </div>
 
     <h1 class="movie-title text-2xl font-bold mt-4"><%= @movie.title %></h1>
 
-    <div class="movie-description mt-2">
-      <p><%= @movie.description %></p>
-    </div>
+  <div class="movie-description mt-2">
+    <p class="max-h-[4.5em] overflow-hidden text-ellipsis line-clamp-3">
+    <%= @movie.description %>
+    </p>
+  </div>
   </div>
   <div class="text-right bg-orange-400">
   <%= button_tag '観たよ！', type: 'button', class: 'btn btn-primary' %>
   <%= button_tag '観たい！', type: 'button', class: 'btn btn-primary' %>
   </div>
-  <% 'レビュー一覧' %>
+
 <%= render @reviews %>    <!-- 投稿されたレビューを表示 -->
-  <% 'レビュー入力フォーム' %>
+
 <%= render 'reviews/form', review: @review, movie: @movie %>
 
 </div>

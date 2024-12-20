@@ -1,0 +1,26 @@
+<div class="flex items-center justify-center h-screen bg-gray-700">
+<div class="text-white">
+<h1>レビューを編集</h1>
+</div>
+<%= form_with(model: @review, local: true) do |form| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body, value: @review.body %>
+  </div>
+
+  <div>
+    <%= form.submit "更新" %>
+  </div>
+<% end %>
+</div>

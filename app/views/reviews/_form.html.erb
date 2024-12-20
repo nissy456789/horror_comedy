@@ -1,6 +1,7 @@
 <div class="fixed top-0 right-0 bg-white p-4 shadow-md rounded-md w-80" id="review-form">
   <h2 class="text-lg font-bold mb-3">レビュー投稿</h2>
   <div>
+  <h2>※ログインしてから投稿してください</h2>
     <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
       <%= f.label :body, class: "form-label" %>
       <%= f.text_area :body, class: "form-control mb-3", rows: "4", placeholder: Review.human_attribute_name(:body) %>
