@@ -12,16 +12,16 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @movies = Movie.find(params[:movie_id])
-    @reviews = Review.find(params[:id])
+    @movie = Movie.find(params[:movie_id])
+    @review = Review.find(params[:id])
   end
 
   def update
-    @movies = Movie.find(params[:movie_id])
-    @reviews = Review.find(params[:id])  # IDでレビューを検索する
+    @movie = Movie.find(params[:movie_id])
+    @review = Review.find(params[:id])  # IDでレビューを検索する
 
     if @review.update(review_params)     # ストロングパラメータを使って更新
-      redirect_to @review, notice: 'レビューが更新されました！'  # 更新成功時のリダイレクト
+      redirect_to movie_path(@movie), notice: 'レビューが更新されました！'  # 更新成功時のリダイレクト
     else
       render :edit  # 更新失敗時は編集画面を再表示する
     end
