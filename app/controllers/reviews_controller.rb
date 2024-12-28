@@ -31,6 +31,14 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.find(params[:id])
     @review.destroy!
+
+    if @review.destroy
+      flash[:notice] = "レビューを削除しました。"
+      redirect_to movie_path(@movie)
+    else
+      flash[:alert] = "レビューの削除に失敗しました。"
+      redirect_to movie_path(@movie)
+    end
   end
 
   private
