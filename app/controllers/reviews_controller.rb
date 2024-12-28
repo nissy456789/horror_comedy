@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_movie
 
   def create
     review = current_user.reviews.build(review_params)
@@ -13,12 +12,14 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
+    @movies = Movie.find(params[:movie_id])
+    @reviews = Review.find(params[:id])
   end
 
   def update
-    @review = Review.find(params[:id])  # IDでレビューを検索する
-    @review.movie_id = params[:movie_id]
+    @movies = Movie.find(params[:movie_id])
+    @reviews = Review.find(params[:id])  # IDでレビューを検索する
+
     if @review.update(review_params)     # ストロングパラメータを使って更新
       redirect_to @review, notice: 'レビューが更新されました！'  # 更新成功時のリダイレクト
     else
@@ -27,10 +28,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-
-  def set_movie
-    @movie = Movie.find(params[:movie_id])
-  end
 
   def review_params
     params.require(:review).permit(:body, :user_id, :user_name).merge(movie_id: params[:movie_id])
