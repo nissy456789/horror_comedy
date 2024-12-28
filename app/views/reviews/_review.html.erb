@@ -1,6 +1,6 @@
 <div class="fixed bottom-0 right-0 bg-gray-300 p-3 rounded-md shadow-md">
-  <table>
   <h3>レビュー一覧</h3>
+  <table>
     <% @reviews.uniq(&:body).each do |review| %>
       <tr id="review-<%= review.id %>">
         <td>
@@ -11,16 +11,10 @@
           <td class="action">
             <ul class="list-inline justify-content-center" style="float: right;">
               <li class="list-inline-item">
-                <li class="list-inline-item">
-                <%= link_to "#", class: "edit-review-link" do %>
-                  編集
-                <% end %>
-              </li>
+                <%= link_to '編集', edit_movie_review_path(@movie.id, review.id), class: "edit-review-link" %>
               </li>
               <li class="list-inline-item">
-                <%= link_to "#", class: "delete--link" do %>
-                  削除
-                <% end %>
+                <%= link_to '#', class: "delete--link"%>
               </li>
             </ul>
           </td>
