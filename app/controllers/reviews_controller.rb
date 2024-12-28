@@ -27,6 +27,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @movie = Movie.find(params[:movie_id])
+    @review = current_user.reviews.find(params[:id])
+    @review.destroy!
+  end
+
   private
 
   def review_params

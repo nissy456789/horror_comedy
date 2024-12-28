@@ -2,7 +2,7 @@
   <h3>レビュー一覧</h3>
   <table>
     <% @reviews.uniq(&:body).each do |review| %>
-      <tr id="review-<%= review.id %>">
+      <tr id="review-<%= review.id %>"><!-- 既に@reviewsの中にidが含まれているためローカル変数で対応した -->
         <td>
           <h3 class="small">投稿者：<%= review.user.name %></h3>
           <p><%= review.body %></p>
@@ -14,7 +14,7 @@
                 <%= link_to '編集', edit_movie_review_path(@movie.id, review.id), class: "edit-review-link" %>
               </li>
               <li class="list-inline-item">
-                <%= link_to '#', class: "delete--link"%>
+                <%= button_to '削除', movie_review_path(@movie.id, review.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-review-button" %>
               </li>
             </ul>
           </td>
