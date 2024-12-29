@@ -1,9 +1,9 @@
-<div class="h-screen w-screen bg-gray-700 text-center p-8">
+<div class="h-screen w-screen bg-gray-700 text-center text-white p-8">
   <h1 class="text-3xl font-bold mb-6">投稿したレビュー一覧</h1>
   
   <div class="space-y-4">
     <% @reviews.each do |review| %>
-      <div class="bg-gray-800 rounded-lg p-6">
+      <div class="bg-gray-800 rounded-lg shadow-md p-6">
         <p class="text-lg"><%= review.body %></p>
       </div>
     <% end %>

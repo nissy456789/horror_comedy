@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = current_user.reviews#ログインしているユーザーの投稿したレビュー取得
+    @reviews = Review.where(user_id: current_user.id).distinct # ログインしているユーザーの投稿した重複のないレビュー取得
   end
 
   private
