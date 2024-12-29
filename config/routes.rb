@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :movies, only: %i[index show]  do
     resources :reviews, only: %i[create edit update destroy]
   end
+  resources :users, only: [:show]
   # Defines the root path route ("/")
   # root "posts#index"
 end

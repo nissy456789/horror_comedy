@@ -19,11 +19,11 @@
 
     <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
       <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to "ユーザー詳細画面", "#" , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+        <%= link_to 'マイページ', user_path(current_user) , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
       </li>
 
       <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
      
         </li>
 
