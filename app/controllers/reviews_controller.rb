@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy#映画とレビューのIDを取得することで対象物を明確にする
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.find(params[:id])
     @review.destroy!
@@ -39,6 +39,10 @@ class ReviewsController < ApplicationController
       flash[:alert] = "レビューの削除に失敗しました。"
       redirect_to movie_path(@movie)
     end
+  end
+
+  def index
+    @reviews = current_user.reviews#ログインしているユーザーの投稿したレビュー取得
   end
 
   private
