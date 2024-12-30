@@ -63,6 +63,8 @@ gem 'dotenv-rails'
 
 gem 'fog-aws'
 
+gem 'themoviedb-api', '~> 1.4', '>= 1.4.1'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
