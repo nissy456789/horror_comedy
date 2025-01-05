@@ -3,4 +3,9 @@ class Movie < ApplicationRecord
   has_many :movie_categories
   has_many :reviews
 
+  private
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["avatar", "description", "id", "id_value", "title"]
+  end
 end

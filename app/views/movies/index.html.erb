@@ -1,6 +1,11 @@
 <div class="flex flex-col items-center min-h-screen bg-gray-700 text-white"> <!-- min-h-screenに変更 -->
   <h1 class="text-4xl mt-4">作品一覧</h1> <!-- 上部に配置 -->
 
+  <%= search_form_for @q, url: movies_path, method: :get do |f| %>
+    <%= f.search_field :title_cont, placeholder: "映画タイトルで検索", class: "form-control text-black" %>
+    <%= f.submit '検索', class: "btn btn-primary" %>
+  <% end %>
+
   <div class="flex flex-wrap justify-center w-full p-4"> <!-- 画像を中央に配置 -->
     <ul class="list-none p-0 flex flex-wrap justify-center"> <!-- 中央揃えにする -->
       <% @movies.each do |movie| %>
@@ -8,7 +13,7 @@
           <% if movie.avatar.present? %>
             <%= link_to movie_path(movie) do %> <!-- 画像をリンクにして詳細画面へ遷移する -->
               <%= image_tag movie.avatar.url,
-                            class: "w-full h-80 object-contain" %> <!-- 画像を大きくする -->
+                            class: "w-full h-96 object-contain" %> <!-- 画像を大きくする -->
             <% end %>
           <% end %>
         </li>

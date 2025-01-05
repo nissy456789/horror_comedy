@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
-  
+
   def index
-    @movies = Movie.select(:id, :avatar).distinct
+    search_movies
+    @movies = @q.result(distinct: true)
   end
 
   def show
@@ -10,4 +11,9 @@ class MoviesController < ApplicationController
     @reviews = @movie.reviews.includes(:user).order(created_at: :desc)
   end
 
+  private
+
+  def search_movies
+    @q = Movie.ransack(params[:q])
+  end
 end
