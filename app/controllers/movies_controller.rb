@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 
   def index
     search_movies
-    @movies = @q.result(distinct: true)
+    @movies = @q.result(distinct: true).page(params[:page])
   end
 
   def show
