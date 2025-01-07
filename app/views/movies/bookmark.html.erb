@@ -1,0 +1,10 @@
+<% @bookmark_movies .each do |movie| %>
+  <li class="mr-2 mb-2 w-1/2 md:w-1/3"> <!-- スマホでは2列、PCでは3列 -->
+    <% if  current.user_bookmark_movies.present? %>
+      <%= link_to movie_path(movie) do %> <!-- 画像をリンクにして詳細画面へ遷移する -->
+        <%= image_tag movie.avatar.url,
+                class: "w-full h-96 object-contain" %> <!-- 画像を大きくする -->
+      <% end %>
+    <% end %>
+  </li>
+<% end %>

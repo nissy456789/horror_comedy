@@ -1,0 +1,4 @@
+<%= link_to '観たい！', bookmarks_path(movie_id: @movie.id), 
+            method: :post, 
+            data: { turbo: "true" }, 
+            id: "bookmark-button-for-movie-#{@movie.id}" %>
