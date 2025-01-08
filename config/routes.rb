@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end 
   end
 
-  resources :bookmarks, only: [:create]
+  resources :bookmarks, only: [:create, :index]
   delete 'unbookmark', to: 'bookmarks#destroy', as: 'unbookmark_movie'
 
   resources :users, only: [:show] do

@@ -16,4 +16,9 @@ class BookmarksController < ApplicationController
       redirect_to movie_path(params[:movie_id]), alert: '削除に失敗しました。'
     end
   end
+
+  def index
+    @bookmarked_movies = current_user.bookmarks.includes(:movie)
+  end
+
 end

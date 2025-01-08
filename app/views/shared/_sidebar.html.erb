@@ -12,7 +12,7 @@
       <div class="inline-block bg-orange-500 px-2 py-1">あなたへおすすめ！</div>
     </li>
     <li class="px-6 py-3 hover:bg-gray-100">
-      <%= link_to "観たい！一覧", bookmark_movies_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      <%= link_to "観たい！一覧", bookmarks_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
     </li>
 
     <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
