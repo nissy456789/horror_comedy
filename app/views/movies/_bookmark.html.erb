@@ -1,4 +1,4 @@
-<%= link_to '観たい！', bookmarks_path(movie_id: @movie.id), 
-            method: :post, 
-            data: { turbo: "true" }, 
-            id: "bookmark-button-for-movie-#{@movie.id}" %>
+<%= form_with url: bookmarks_path, method: :post, local: true, id: "bookmark-form-for-movie-#{@movie.id}" do |form| %>
+  <%= form.hidden_field :movie_id, value: @movie.id %>
+  <%= form.submit '観たい！', class: 'btn btn-primary' %>
+<% end %>
