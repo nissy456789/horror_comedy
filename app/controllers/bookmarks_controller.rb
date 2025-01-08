@@ -1,18 +1,19 @@
 class BookmarksController < ApplicationController
   def create
-    @movie = Movie.find(params[:movie_id])
-    if current_user.bookmark(@movie)
-      flash[:success] = '観たい一覧へ追加されました'
+    @bookmark = current_user.bookmarks.build(movie_id: params[:movie_id])
+    if @bookmark.save
+      redirect_to movie_path(params[:movie_id]), notice: '観たいリストに追加しました。'
     else
-      flash[:error] = 'なんかダメっぽい...' # 失敗時のメッセージ
+      redirect_to movie_path(params[:movie_id]), alert: '登録に失敗しました。'
     end
   end
       
   def destroy
-    movie = Movie.find(params[:movie_id])
-    if current_user.unbookmark(@movie)
-      flash[:success] = '観たい！から削除しました'
+    @bookmark = current_user.bookmarks.find_by(movie_id: params[:movie_id])
+    if @bookmark&.destroy
+      redirect_to movie_path(params[:movie_id]), notice: '観たいリストから削除しました。'
     else
-      flash[:error] = 'なんかダメっぽい...' # 失敗時のメッセージ
+      redirect_to movie_path(params[:movie_id]), alert: '削除に失敗しました。'
+    end
   end
 end
