@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy#ユーザーが削除されたらレビューも削除される。
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_movies, through: :bookmarks, source: :movie#bookmarkテーブルを中間にしてuser.bookmark_moviesで取得できる。
+  has_many :watcheds, dependent: :destroy
 
   #自分のレビューか確認する
   def own?(object)

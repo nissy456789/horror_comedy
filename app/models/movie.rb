@@ -3,6 +3,7 @@ class Movie < ApplicationRecord
   has_many :movie_categories
   has_many :reviews, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :watcheds, dependent: :destroy
 
   private
 
