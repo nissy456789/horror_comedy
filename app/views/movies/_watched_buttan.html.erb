@@ -1,0 +1,5 @@
+<% if current_user.watched?(@movie) %>
+  <%= render 'unwatched', { movie: @movie } %>
+<% else %>
+  <%= render 'watched', { movie: @movie } %>
+<% end %>
