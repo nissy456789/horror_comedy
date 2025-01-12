@@ -5,7 +5,9 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_movies, through: :bookmarks, source: :movie#bookmarkテーブルを中間にしてuser.bookmark_moviesで取得できる。
   has_many :watcheds, dependent: :destroy
-  has_many :watched_movies, through: :watcheds, source: :movie
+  has_many :watched_movies, through: :watcheds, source: :movie#watchedの中間テーブル。watched_moviesで取得できる。
+  has_many :recommends, dependent: :destroy
+  has_many :recommend_movies, through: :recommends, source: :movie
 
   #自分のレビューか確認する
   def own?(object)

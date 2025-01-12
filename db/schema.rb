@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_08_233706) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_10_054609) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,6 +71,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_08_233706) do
     t.string "avatar"
   end
 
+  create_table "recommends", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.bigint "bookmark_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bookmark_id"], name: "index_recommends_on_bookmark_id"
+    t.index ["movie_id"], name: "index_recommends_on_movie_id"
+    t.index ["user_id"], name: "index_recommends_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "movie_id"
@@ -114,6 +125,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_08_233706) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "movie_categories", "categories", column: "categories_id"
   add_foreign_key "movie_categories", "movies"
+  add_foreign_key "recommends", "bookmarks"
+  add_foreign_key "recommends", "movies"
+  add_foreign_key "recommends", "users"
   add_foreign_key "watcheds", "movies"
   add_foreign_key "watcheds", "users"
 end

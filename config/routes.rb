@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'horror_comedys/top'
   # 環境構築の検証用
   resources :tasks
+  #トップページ設定用
   root 'horror_comedys#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   delete 'unbookmark', to: 'bookmarks#destroy', as: 'unbookmark_movie'
 
   resources :watcheds, only: [:create, :destroy]
+  resources :recommends, only: [:index] 
 
   resources :users, only: [:show] do
     resources :reviews, only: %i[index]
