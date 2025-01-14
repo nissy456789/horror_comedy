@@ -109,3 +109,8 @@ Movie.find_or_create_by(title: 'ファイブ・ナイツ・アット・フレデ
   movie.description = '弟の失踪事件に苦しむマイクは、廃墟のピザ店「フレディ・ファズベアーズ・ピザ」で夜間警備の仕事を始める。かつて子ども失踪事件の舞台となったその店で、マスコットが凶暴化し彼に襲いかかる。単なる警備が命がけの恐怖に変わっていく。グロく無いです。'
   movie.avatar = File.open(Rails.root.join('app/assets/images/5naitu.at.huredli.jpg'))
 end
+
+Movie.find_or_create_by(title: '戦慄怪奇ワールド・コワすぎ！') do |movie|
+  movie.description = '『貞子ｖｓ伽椰子』などの白石晃士監督による新感覚ホラーシリーズの集大成となる長編劇場映画。怪奇系ドキュメンタリーを作ってきたプロデューサー・工藤の下に、３人の若者が廃墟で撮影した映像が送られてくる。そこには正体不明の赤い女が映っていた。'
+  movie.avatar = File.open(Rails.root.join('app/assets/images/kowasugi.jpg'))
+end
