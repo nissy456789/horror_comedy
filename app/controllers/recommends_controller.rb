@@ -36,7 +36,10 @@ class RecommendsController < ApplicationController
                                     .where.not(id: bookmarked_movie_ids)
                                     .where.not(id: Recommend.where(user_id: current_user)
                                                           .distinct.pluck(:movie_id)).pluck(:id)
-  
-    Movie.where(id: recommended_movie_ids).sample(3)
+                                                          if recommended_movie_ids.empty?
+                                                            Movie.all.sample(3)  # レコメンドがない場合は全作品から3つ取得
+                                                          else
+                                                            Movie.where(id: recommended_movie_ids).sample(3)  # レコメンドがある場合は従来通り
+                                                          end
   end
 end
