@@ -1,45 +1,80 @@
-<div class="fixed top-0 left-0 h-full w-1/7 bg-black text-black">
-  <ul class="list-none font-bold">
-    <!-- サイドバー項目 -->
+<div class="relative">
+  <!-- メニューボタン -->
+  <button id="menuButton" class="bg-orange-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-orange-600 lg:hidden">
+    メニュー ▼
+  </button>
 
-    <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-    <%= link_to "作品一覧", movies_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-  </li>
-  
-    <li class="px-6 py-3 hover:bg-gray-100">
+  <!-- ドロップダウンメニュー -->
+  <ul id="dropdownMenu" class="absolute left-0 mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg hidden lg:block">
+    <li class="px-4 py-2 hover:bg-gray-100">
+      <%= link_to "作品一覧", movies_path, class: "block text-gray-800" %>
+    </li>
+    <li class="px-4 py-2 hover:bg-gray-100">
       <div class="inline-block bg-orange-500 px-2 py-1">ランキング</div>
     </li>
-
-    <li class="px-6 py-3 hover:bg-gray-100">
-      <%= link_to "あなたへおすすめ", recommends_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+    <li class="px-4 py-2 hover:bg-gray-100">
+      <%= link_to "あなたへおすすめ", recommends_path, class: "block text-gray-800" %>
+    </li>
+    <li class="px-4 py-2 hover:bg-gray-100">
+      <%= link_to "観たい！一覧", bookmarks_path, class: "block text-gray-800" %>
     </li>
 
-    <li class="px-6 py-3 hover:bg-gray-100">
-      <%= link_to "観たい！一覧", bookmarks_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-    </li>
-
-    <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
-      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to 'マイページ', user_path(current_user) , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+    <% if user_signed_in? %>
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <%= link_to 'マイページ', user_path(current_user), class: "block text-gray-800" %>
       </li>
-
-      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-     
-        </li>
-
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "block text-gray-800" %>
+      </li>
     <% else %>
-
-
-      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to "ログイン",user_session_path , class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      <li class="px-4 py-2 hover:bg-gray-100">
+        <%= link_to "ログイン", user_session_path, class: "block text-gray-800" %>
       </li>
     <% end %>
-    <li class="px-6 py-3 hover:bg-gray-100">
+
+    <li class="px-4 py-2 hover:bg-gray-100">
       <div class="inline-block bg-gray-400 px-2 py-1 text-white">お問い合わせ</div>
     </li>
-    <li class="px-6 py-3 hover:bg-gray-100">
-     <%= link_to "プライバシーポリシー", "https://www.kiyac.app/privacypolicy/iKJlBH2wuM9NGRhYexTb", class: "inline-block bg-gray-400 px-2 py-1 text-white" %>
+    <li class="px-4 py-2 hover:bg-gray-100">
+      <%= link_to "プライバシーポリシー", "https://www.kiyac.app/privacypolicy/iKJlBH2wuM9NGRhYexTb", class: "block text-gray-800" %>
     </li>
   </ul>
+
+  <!-- サイドバーコンテンツ (画面サイズが1024px以上の時) -->
+  <div class="hidden lg:block fixed top-0 left-0 h-full w-1/7 bg-black text-black">
+    <ul class="list-none font-bold">
+      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+        <%= link_to "作品一覧", movies_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      </li>
+      <li class="px-6 py-3 hover:bg-gray-100">
+        <div class="inline-block bg-orange-500 px-2 py-1">ランキング</div>
+      </li>
+      <li class="px-6 py-3 hover:bg-gray-100">
+        <%= link_to "あなたへおすすめ", recommends_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      </li>
+      <li class="px-6 py-3 hover:bg-gray-100">
+        <%= link_to "観たい！一覧", bookmarks_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+      </li>
+
+      <% if user_signed_in? %>
+        <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+          <%= link_to 'マイページ', user_path(current_user), class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+        </li>
+        <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+        </li>
+      <% else %>
+        <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+          <%= link_to "ログイン", user_session_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+        </li>
+      <% end %>
+
+      <li class="px-6 py-3 hover:bg-gray-100">
+        <div class="inline-block bg-gray-400 px-2 py-1 text-white">お問い合わせ</div>
+      </li>
+      <li class="px-6 py-3 hover:bg-gray-100">
+        <%= link_to "プライバシーポリシー", "https://www.kiyac.app/privacypolicy/iKJlBH2wuM9NGRhYexTb", class: "inline-block bg-gray-400 px-2 py-1 text-white" %>
+      </li>
+    </ul>
+  </div>
 </div>
