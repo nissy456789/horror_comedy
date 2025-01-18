@@ -1,5 +1,9 @@
-<% if current_user.watched?(@movie) %>
-  <%= render 'unwatched', { movie: @movie } %>
+<% if current_user %>
+  <% if current_user.watched?(@movie) %>
+    <%= render 'unwatched', { movie: @movie } %>
+  <% else %>
+    <%= render 'watched', { movie: @movie } %>
+  <% end %>
 <% else %>
-  <%= render 'watched', { movie: @movie } %>
+  <%= link_to 'ログインして', user_session_path, class: 'btn btn-primary' %>
 <% end %>
