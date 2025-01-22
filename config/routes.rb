@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  post 'logout', to: 'sessions#destroy', as: 'logout'
   devise_for :users
   #ログアウト用ルーティングです。turbo_methodがうまく機能しないため設定しました。
+  # Google認証のコントローラー作成gemインストールしました。(仮)
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
