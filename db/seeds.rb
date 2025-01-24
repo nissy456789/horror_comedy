@@ -114,3 +114,8 @@ Movie.find_or_create_by(title: '戦慄怪奇ワールド・コワすぎ！') do 
   movie.description = '『貞子ｖｓ伽椰子』などの白石晃士監督による新感覚ホラーシリーズの集大成となる長編劇場映画。怪奇系ドキュメンタリーを作ってきたプロデューサー・工藤の下に、３人の若者が廃墟で撮影した映像が送られてくる。そこには正体不明の赤い女が映っていた。'
   movie.avatar = File.open(Rails.root.join('app/assets/images/kowasugi.jpg'))
 end
+
+Movie.find_or_create_by(title: 'それがいる森') do |movie|
+  movie.description = '田舎町で農業を営む相葉くんのもとに、別れた妻と暮らしていた息子の一也が突然訪ねてくる。しばらくの間一緒に暮らすことになった2人だったが、時を同じくして近くの森では怪奇現象が立て続けに起き、町でも住民の不審死や失踪事件が繰り返されていた。そんなある日、淳一と一也は得体の知れない“それ”を目撃してしまったことで、怪奇現象に巻き込まれていく。(ネタバレ：それは宇宙人だよ)'
+  movie.avatar = File.open(Rails.root.join('app/assets/images/soregairumori.jpg'))
+end
