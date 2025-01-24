@@ -1,11 +1,33 @@
-<div class="fixed top-0 right-0 bg-white p-4 shadow-md rounded-md w-80" id="review-form">
-  <h2 class="text-lg font-bold mb-3">レビュー投稿</h2>
-  <div>
-  <h2>※ログインしてから投稿してください</h2>
-    <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
-      <%= f.label :body, class: "form-label" %>
-      <%= f.text_area :body, class: "form-control mb-3", rows: "4", placeholder: Review.human_attribute_name(:body) %>
-      <%= f.submit '投稿', class: "btn btn-primary" %>
-    <% end %>
-  </div>
+<div class="relative">
+  <ul id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg lg:block">
+  <!-- ドロップダウンメニュー -->
+  <ul id="dropdownMenu" class="absolute left-0 mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg lg:block top-0 right-0">
+      <li class="px-4 py-2 hover:bg-gray-100">
+          <div class="lg:hidden">
+              <button id="toggle-form" class="btn btn-secondary">レビュー投稿</button>
+              <div class="hidden" id="review-form-dropdown">
+                  <h2 class="text-lg font-bold mb-3">レビュー投稿</h2>
+                  <h2>※ログインしてから投稿してください</h2>
+                  <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
+                      <%= f.label :body, class: "form-label" %>
+                      <%= f.text_area :body, class: "form-control mb-3", rows: "4", placeholder: Review.human_attribute_name(:body) %>
+                      <%= f.submit '投稿', class: "btn btn-primary" %>
+                  <% end %>
+              </div>
+          </div>
+      </li>
+  </ul>
+</div>
+
+<!-- 1024px以上の時に表示されるレビュー投稿フォーム -->
+<div class="hidden lg:block fixed top-0 right-0 bg-white p-4 shadow-md rounded-md w-80" id="review-form">
+    <h2 class="text-lg font-bold mb-3">レビュー投稿</h2>
+    <div>
+        <h2>※ログインしてから投稿してください</h2>
+        <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
+            <%= f.label :body, class: "form-label" %>
+            <%= f.text_area :body, class: "form-control mb-3", rows: "4", placeholder: Review.human_attribute_name(:body) %>
+            <%= f.submit '投稿', class: "btn btn-primary" %>
+        <% end %>
+    </div>
 </div>

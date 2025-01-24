@@ -1,25 +1,25 @@
-<div class="fixed bottom-0 right-0 bg-gray-300 p-3 rounded-md shadow-md">
+<div class="flex items-center justify-center bg-black text-white p-3">
   <h3>レビュー一覧</h3>
   <table>
-    <% @reviews.uniq(&:body).each do |review| %>
-      <tr id="review-<%= review.id %>"><!-- 既に@reviewsの中にidが含まれているためローカル変数で対応した -->
-        <td>
-          <h3 class="small">投稿者：<%= review.user.name %></h3>
-          <p><%= review.body %></p>
+  <% @reviews.uniq(&:body).each do |review| %>
+    <tr id="review-<%= review.id %>">
+      <td>
+        <h3 class="small">投稿者：<%= review.user.name %></h3>
+        <p><%= review.body %></p>
+      </td>
+      <% if current_user&.own?(review) %>
+        <td class="action">
+          <ul class="list-inline justify-content-center" style="float: right;">
+            <li class="list-inline-item">
+              <%= link_to '編集', edit_movie_review_path(@movie.id, review.id), class: "edit-review-link" %>
+            </li>
+            <li class="list-inline-item">
+              <%= button_to '削除', movie_review_path(@movie.id, review.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-review-button" %>
+            </li>
+          </ul>
         </td>
-        <% if current_user && current_user.own?(review) %>
-          <td class="action">
-            <ul class="list-inline justify-content-center" style="float: right;">
-              <li class="list-inline-item">
-                <%= link_to '編集', edit_movie_review_path(@movie.id, review.id), class: "edit-review-link" %>
-              </li>
-              <li class="list-inline-item">
-                <%= button_to '削除', movie_review_path(@movie.id, review.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete-review-button" %>
-              </li>
-            </ul>
-          </td>
-        <% end %>
-      </tr>
-    <% end %>
+      <% end %>
+    </tr>
+  <% end %>
   </table>
 </div>

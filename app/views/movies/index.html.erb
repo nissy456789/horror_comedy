@@ -6,7 +6,7 @@
     <%= f.submit '検索', class: "btn btn-primary" %>
   <% end %>
 
-  <div class="flex flex-wrap justify-center w-full p-4"> <!-- 画像を中央に配置 -->
+  <div class="flex flex-wrap cjustify-center w-full p-4"> <!-- 画像を中央に配置 -->
     <ul class="list-none p-0 flex flex-wrap justify-center"> <!-- 中央揃えにする -->
       <% @movies.each do |movie| %>
         <li class="mr-2 mb-2 w-1/2 md:w-1/3"> <!-- スマホでは2列、PCでは3列 -->

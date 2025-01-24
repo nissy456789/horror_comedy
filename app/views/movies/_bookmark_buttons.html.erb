@@ -1,10 +1,11 @@
 <div class = "bg-orange-400 text-white">
-<% if current_user %>
-  <% if current_user.bookmark?(@movie) %>
-    <%= render 'unbookmark', { movie: @movie } %>
+  <% if current_user %>
+    <% if current_user.bookmark?(@movie) %>
+      <%= render 'unbookmark', { movie: @movie } %>
+    <% else %>
+      <%= render 'bookmark', { movie: @movie } %>
+    <% end %>
   <% else %>
-    <%= render 'bookmark', { movie: @movie } %>
+    <%= link_to 'ブックマークしよう！', user_session_path, class: 'btn btn-primary' %>
   <% end %>
-<% else %>
-<%= link_to 'ブックマークしよう！', user_session_path, class: 'btn btn-primary' %>
-<% end %>
+</div>
