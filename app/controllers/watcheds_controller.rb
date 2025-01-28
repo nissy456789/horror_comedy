@@ -17,7 +17,7 @@ class WatchedsController < ApplicationController
     end
   end
 
-  def ranking#全ユーザーの情報を取得してwatchedリストへ追加された数をカウントする。
+  def ranking#movieテーブルとwatchedテーブルを結合してwatchedテーブルへ追加された映画の数を数える。
     @ranked_movies = Movie.joins(:watcheds)
                         .group('movies.id')
                         .order('COUNT(watcheds.id) DESC')
