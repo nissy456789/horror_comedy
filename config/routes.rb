@@ -32,7 +32,12 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [:create, :index]
   delete 'unbookmark', to: 'bookmarks#destroy', as: 'unbookmark_movie'
 
-  resources :watcheds, only: [:create, :destroy]
+  resources :watcheds, only: [:create, :destroy] do
+    collection do
+      get 'ranking'
+    end
+  end
+    
 
   resources :recommends, only: [:index] 
 

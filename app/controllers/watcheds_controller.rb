@@ -16,4 +16,12 @@ class WatchedsController < ApplicationController
       redirect_to movie_path(params[:movie_id]), alert: '削除に失敗しました。'
     end
   end
+
+  def ranking#全ユーザーの情報を取得してwatchedリストへ追加された数をカウントする。
+    @ranked_users = User.joins(:watcheds)
+                        .group('users.id')
+                        .order('COUNT(watcheds.id) DESC')
+                        .select('users.*, COUNT(watcheds.id) as watched_count')
+  end
+
 end
