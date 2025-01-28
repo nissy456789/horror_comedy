@@ -1,3 +1,12 @@
-<body class="bg-black">
-<% "ランキング" %>
+<body class="bg-black text-white">
+<div class="flex flex-col items-center min-h-screen bg-black text-white"> 
+<h1>ランキング</h1>
+
+<% @ranked_users.each do |user| %>
+  <div>
+    <h2><%= user.name %></h2>
+    <p>観たいボタン押された数: <%= user.watched_count %></p>
+  </div>
+<% end %>
+</body>
 </body>
