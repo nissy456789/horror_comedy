@@ -21,8 +21,14 @@ class RecommendsController < ApplicationController
 
   #類似ユーザーのブックマークから映画を提案する 
   def recommend_movies
+    # 未ログインの場合、フラッシュメッセージを設定
+    if current_user.nil?
+      return # 画面遷移せずに処理を終了
+    end
+  
     bookmarked_movie_ids = current_user.bookmark_movies.pluck(:movie_id)
-    similar_users = similar_users
+    similar_users = similar_users # この変数は適切に定義されているか確認してね
+  
     if similar_users.present?
       similar_user_movie_ids = Bookmark.where(user_id: similar_users.ids)
                                         .where.not(movie_id: bookmarked_movie_ids)
@@ -31,15 +37,17 @@ class RecommendsController < ApplicationController
       similar_user_movie_ids = []
     end
   
-    # ここでsimilar_user_movie_idsを使って推薦映画を取得する
+    # 推薦映画のIDを取得
     recommended_movie_ids = Movie.where(id: similar_user_movie_ids)
-                                    .where.not(id: bookmarked_movie_ids)
-                                    .where.not(id: Recommend.where(user_id: current_user)
-                                                          .distinct.pluck(:movie_id)).pluck(:id)
-                                                          if recommended_movie_ids.empty?
-                                                            Movie.all.sample(3)  # レコメンドがない場合は全作品から3つ取得
-                                                          else
-                                                            Movie.where(id: recommended_movie_ids).sample(3)  # レコメンドがある場合は従来通り
-                                                          end
+                                   .where.not(id: bookmarked_movie_ids)
+                                   .where.not(id: Recommend.where(user_id: current_user)
+                                                           .distinct.pluck(:movie_id)).pluck(:id)
+  
+    # レコメンドがない場合は全作品から3つ取得
+    if recommended_movie_ids.empty?
+      Movie.all.sample(3) 
+    else
+      Movie.where(id: recommended_movie_ids).sample(3)  # レコメンドがある場合は従来通り
+    end
   end
 end
