@@ -2,10 +2,13 @@
 <div class="flex flex-col items-center min-h-screen bg-black text-white"> 
 <h1>ランキング</h1>
 
-<% @ranked_users.each do |user| %>
+<% @ranked_movies.each do |movie| %>
   <div>
-    <h2><%= user.name %></h2>
-    <p>観たいボタン押された数: <%= user.watched_count %></p>
+  <%= link_to movie_path(movie) do %>
+      <%= image_tag movie.avatar.url, class: "w-full h-96 object-contain" %>
+    <% end %>
+    <h2><%= movie.title %></h2>
+    <p>観た人数: <%= movie.watched_count %></p>
   </div>
 <% end %>
 </body>
