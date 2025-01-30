@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :recommends, dependent: :destroy
   has_many :recommend_movies, through: :recommends, source: :movie
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   #自分のレビューか確認する
   def own?(object)
     id == object&.user_id
@@ -38,6 +41,5 @@ class User < ApplicationRecord
     watched_movies.include?(movie)
   end
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+
 end

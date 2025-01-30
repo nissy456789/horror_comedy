@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  get 'horror_comedys/top'
-  # 環境構築の検証用
-  resources :tasks
+
   #トップページ設定用
   root 'horror_comedys#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
