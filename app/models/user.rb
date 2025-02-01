@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :recommend_movies, through: :recommends, source: :movie
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   #自分のレビューか確認する
   def own?(object)
