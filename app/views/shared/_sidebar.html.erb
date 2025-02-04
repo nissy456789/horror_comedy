@@ -52,44 +52,50 @@
     <ul class="list-none font-bold">
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
       <%= link_to movies_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
-        <%= image_tag 'film.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        <%= image_tag 'film.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         作品一覧
       <% end %>
     </li>
 
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
       <%= link_to ranking_watcheds_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
-        <%= image_tag 'ranking.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        <%= image_tag 'ranking.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         ランキング
       <% end %>
     </li>
 
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
       <%= link_to recommends_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
-        <%= image_tag 'recomend.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        <%= image_tag 'recomend.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         あなたへオススメ
       <% end %>
     </li>
 
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
       <%= link_to bookmarks_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
-        <%= image_tag 'bookmark.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        <%= image_tag 'bookmark.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         観たい！一覧
       <% end %>
     </li>
 
-      <% if user_signed_in? %>
-        <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-          <%= link_to 'マイページ', user_path(current_user), class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-        </li>
-        <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
+    <% if user_signed_in? %>
+      <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
+        <%= link_to  user_path(current_user), class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+          <%= image_tag 'user.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
+          マイページ
+        <% end %>
+      </li>
+      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-        </li>
-      <% else %>
-        <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-          <%= link_to "ログイン", user_session_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-        </li>
-      <% end %>
+      </li>
+    <% else %>
+      <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
+          <%= link_to   user_session_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+            <%= image_tag 'user.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
+            ログイン
+          <% end %>
+      </li>
+    <% end %>
 
       <li class="px-6 py-3 hover:bg-gray-100">
         <%= link_to "お問合せ", "https://forms.gle/zsRgRHCv9Box48jT6", class: "inline-block bg-gray-400 px-2 py-1 text-white" %>
