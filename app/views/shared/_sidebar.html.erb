@@ -6,9 +6,13 @@
 
   <!-- ドロップダウンメニュー -->
   <ul id="dropdownMenu" class="absolute left-0 mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg hidden lg:block">
-    <li class="px-4 py-2 hover:bg-gray-100">
-      <%= link_to "作品一覧", movies_path, class: "block text-gray-800" %>
-    </li>
+  <li class="px-4 py-2 hover:bg-gray-100">
+  <%= link_to movies_path, class: "block text-gray-800" do %>
+    <%= image_tag 'film.jpg', style: "width: 48px; height: auto;" %>
+      作品一覧
+    <% end %>
+  </li>
+
     <li class="px-4 py-2 hover:bg-gray-100">
       <%= link_to "ランキング" , ranking_watcheds_path, class: "block text-gray-800" %>
     </li>
@@ -44,21 +48,35 @@
 
   <!-- サイドバーコンテンツ (画面サイズが1024px以上の時) -->
   <div class="hidden lg:block fixed top-0 left-0 h-full w-1/7 bg-black text-black">
-    <ul class="list-none font-bold">
-      <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-        <%= link_to "作品一覧", movies_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-      </li>
 
-      <li class="px-6 py-3 hover:bg-gray-100">
-      <%= link_to "ランキング" , ranking_watcheds_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+    <ul class="list-none font-bold">
+    <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
+      <%= link_to movies_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+        <%= image_tag 'film.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        作品一覧
+      <% end %>
     </li>
 
-      <li class="px-6 py-3 hover:bg-gray-100">
-        <%= link_to "あなたへおすすめ", recommends_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-      </li>
-      <li class="px-6 py-3 hover:bg-gray-100">
-        <%= link_to "観たい！一覧", bookmarks_path, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
-      </li>
+    <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
+      <%= link_to ranking_watcheds_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+        <%= image_tag 'ranking.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        ランキング
+      <% end %>
+    </li>
+
+    <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
+      <%= link_to recommends_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+        <%= image_tag 'recomend.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        あなたへオススメ
+      <% end %>
+    </li>
+
+    <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
+      <%= link_to bookmarks_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+        <%= image_tag 'bookmark.jpg', style: "width: 30px; height: auto; margin-right: 10px;" %>
+        観たい！一覧
+      <% end %>
+    </li>
 
       <% if user_signed_in? %>
         <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
