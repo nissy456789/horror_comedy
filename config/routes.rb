@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   post 'logout', to: 'sessions#destroy', as: 'logout'
-  devise_for :users
+  devise_for :users,controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
   #ログアウト用ルーティングです。turbo_methodがうまく機能しないため設定しました。
-  # Google認証のコントローラー作成gemインストールしました。(仮)
+
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
