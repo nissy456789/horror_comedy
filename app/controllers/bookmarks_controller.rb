@@ -21,7 +21,7 @@ class BookmarksController < ApplicationController
     if current_user.nil?
       return # 画面遷移せずに処理を終了
     end
-  
+
     @bookmarked_movies = current_user.bookmarks.includes(:movie)
   end
 

@@ -1,8 +1,13 @@
 <div class="flex flex-col items-center min-h-screen bg-black text-white"> 
-  <h1 class="text-4xl">観たい！一覧画面</h1>
-  <% @bookmarked_movies.each do |bookmark| %>
-    <%= link_to movie_path(bookmark.movie) do %>
-      <%= image_tag bookmark.movie.avatar.url, class: "w-full h-96 object-contain" %>
-    <% end %><!---ブックマークした映画のIDから取得する--->
+  <h1 class="text-4xl">観たい！一覧</h1>
+  
+  <% if @bookmarked_movies.present? %>
+    <% @bookmarked_movies.each do |bookmark| %>
+      <%= link_to movie_path(bookmark.movie) do %>
+        <%= image_tag bookmark.movie.avatar.url, class: "w-full h-96 object-contain" %>
+      <% end %><!---ブックマークした映画のIDから取得する--->
+    <% end %>
+  <% else %>
+    <p>ブックマークした映画は存在しません。</p>
   <% end %>
 </div>
