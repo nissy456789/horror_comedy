@@ -6,12 +6,11 @@
 
   <!-- ドロップダウンメニュー -->
   <ul id="dropdownMenu" class="absolute left-0 mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg hidden lg:block">
+
   <li class="px-4 py-2 hover:bg-gray-100">
-  <%= link_to movies_path, class: "block text-gray-800" do %>
-    <%= image_tag 'film.jpg', style: "width: 48px; height: auto;" %>
-      作品一覧
-    <% end %>
+    <%= link_to "作品一覧" , movies_path, class: "block text-gray-800" %>
   </li>
+
 
     <li class="px-4 py-2 hover:bg-gray-100">
       <%= link_to "ランキング" , ranking_watcheds_path, class: "block text-gray-800" %>
@@ -37,8 +36,8 @@
       </li>
     <% end %>
 
-    <li class="px-6 py-3 hover:bg-gray-100">
-        <%= link_to "お問合せ", "https://forms.gle/zsRgRHCv9Box48jT6", class: "inline-block px-2 py-1 text-gray-800" %>
+    <li class="px-4 py-3 hover:bg-gray-100">
+        <%= link_to "お問合せ", "https://forms.gle/zsRgRHCv9Box48jT6", class: "block text-gray-800" %>
       </li>
 
     <li class="px-4 py-2 hover:bg-gray-100">
@@ -51,28 +50,28 @@
 
     <ul class="list-none font-bold">
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
-      <%= link_to movies_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+      <%= link_to movies_path, class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
         <%= image_tag 'film.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         作品一覧
       <% end %>
     </li>
 
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
-      <%= link_to ranking_watcheds_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+      <%= link_to ranking_watcheds_path, class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
         <%= image_tag 'ranking.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         ランキング
       <% end %>
     </li>
 
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
-      <%= link_to recommends_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+      <%= link_to recommends_path, class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
         <%= image_tag 'recomend.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         あなたへオススメ
       <% end %>
     </li>
 
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
-      <%= link_to bookmarks_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+      <%= link_to bookmarks_path, class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
         <%= image_tag 'bookmark.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
         観たい！一覧
       <% end %>
@@ -80,17 +79,17 @@
 
     <% if user_signed_in? %>
       <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
-        <%= link_to  user_path(current_user), class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+        <%= link_to  user_path(current_user), class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
           <%= image_tag 'user.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
           マイページ
         <% end %>
       </li>
       <li class="px-6 py-3 border-gray-300 hover:bg-gray-100">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "inline-block bg-orange-500 px-2 py-1 text-black" %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "inline-block bg-orange-400 px-2 py-1 text-black" %>
       </li>
     <% else %>
       <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
-          <%= link_to   user_session_path, class: "block text-black flex items-center inline-block bg-orange-500 px-2 py-1" do %>
+          <%= link_to   user_session_path, class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
             <%= image_tag 'user.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
             ログイン
           <% end %>
