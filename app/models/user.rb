@@ -12,9 +12,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  devise :omniauthable, omniauth_providers: %i[google_oauth2]
-
-  validates :uid, uniqueness: { scope: :provider }
+     devise :omniauthable, omniauth_providers: %i[google_oauth2]
+  
+    validates :uid, uniqueness: { scope: :provider }
 
   #自分のレビューか確認する
   def own?(object)
@@ -51,8 +51,6 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.name = auth.info.name
       user.password = Devise.friendly_token[0,20]
-      user.avatar = auth.info.image
-      user.skip_confirmation!
     end
   end
 
