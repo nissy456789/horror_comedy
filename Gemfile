@@ -75,7 +75,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'omniauth'
 
-
+gem "meta-tags"
 
 gem 'omniauth-github'
 
