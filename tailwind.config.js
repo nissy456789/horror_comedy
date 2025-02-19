@@ -5,6 +5,5 @@ module.exports = {
     './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js'
   ],
-  plugins: [
-    require('@tailwindcss/line-clamp')]
+  plugins: [require("daisyui")],
 }

@@ -3,16 +3,19 @@
   <%= image_tag 'komitera.jpg', style: "width: 600px; height: auto;" %>
 </div>
 
-<div class="text-center p-9 text-white text-2xl">
-
-  <p>このアプリはB級ホラー映画や怖くないホラー映画を紹介するアプリです。</p>
-  <p>気になる作品があったら観たい！ボタンを押して保存しましょう。</p>
-  <p>ブックマークとして保存されます。</p>
-  <p>もしも、もう観たよ！！って作品がある時は観たよ！ボタンを押して下さいね。</p>
-  <p>観た人が多い作品はランキングにしています。（本リリースでやります）</p>
-  <p>レコメンド機能によってあなただけのおすすめ映画も紹介する機能もあるので</p>
-  <p>よかったら試して下さい！</p>
-  </h1>
-  <%= button_to 'さぁ！まだ観ぬ世界へ！！', movies_path, method: :get, class: 'px-6 py-2 bg-orange-500 text-white hover:bg-orange-700 ' %>
+<div class="bg-black text-white text-center p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6">このアプリについて</h2>
+  <div class="space-y-4 text-lg leading-relaxed">
+    <p>このアプリはB級ホラー映画や怖くないホラー映画を紹介するアプリです。</p>
+    <p>気になる作品があったら「観たい！」ボタンを押して保存しましょう。</p>
+    <p>ブックマークとして保存されます。</p>
+    <p>もしも、もう観たよ！！って作品がある時は「観たよ！」ボタンを押して下さいね。</p>
+    <p>観た人が多い作品はランキングにしています。</p>
+    <p>レコメンド機能によってあなただけのおすすめ映画も紹介する機能もあるので、よかったら試して下さい！</p>
+  </div>
+  <div class="mt-8">
+    <%= button_to 'さぁ！まだ観ぬ世界へ！！', movies_path, method: :get, class: 'px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2' %>
+  </div>
 </div>
+
 </body>
