@@ -25,7 +25,7 @@
     <p class = "text-white mx-10">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
     <%= render 'watched_buttan', movie: @movie %>
   </div>
-  <%= render @reviews %> <!-- 投稿されたレビューを表示 -->
+  <%= render 'reviews/review' %> <!-- 投稿されたレビューを表示 -->
   <%= render 'reviews/form', review: @review, movie: @movie %>
 
 </div>
