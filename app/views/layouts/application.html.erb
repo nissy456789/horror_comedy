@@ -14,7 +14,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
-    <%= display_meta_tags(default_meta_tags) %>  
+    <%= display_meta_tags(title: "こみてらっ！", 
+                      description: "怖くないB級ホラー映画紹介アプリです", 
+                      image: "komitera.png") %>
+
   </head>
 
   <body>
