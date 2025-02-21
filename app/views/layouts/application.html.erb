@@ -15,16 +15,23 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
     <%= display_meta_tags(
-  title: "こみてらっ！", 
-  description: "怖くないB級ホラー映画紹介アプリです", 
-  og: {
-    title: "こみてらっ！",
-    description: "怖くないB級ホラー映画紹介アプリです",
-    image: "https://horror-comedy.onrender.com/path/to/komitera2.jpg",  # 画像のURLは絶対パスを使用
-    url: request.original_url,  # 現在のページのURLを取得
-    type: "website"  # ページのタイプを指定
-  }
-) %>
+      title: "こみてらっ！", 
+      description: "怖くないB級ホラー映画紹介アプリです", 
+      og: {
+        title: "こみてらっ！",
+        description: "怖くないB級ホラー映画紹介アプリです",
+        image: "https://horror-comedy.onrender.com/path/to/komitera2.jpg",  # 画像のURLは絶対パスを使用
+        url: request.original_url,  # 現在のページのURLを取得
+        type: "website"  # ページのタイプを指定
+      }
+    ) %>
+    
+    <!-- Twitterカード用メタタグ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="こみてらっ！">
+    <meta name="twitter:description" content="怖くないB級ホラー映画紹介アプリです">
+    <meta name="twitter:image" content="https://horror-comedy.onrender.com/path/to/komitera2.jpg">
+    <meta name="twitter:url" content="<%= request.original_url %>">
 
 
   </head>
