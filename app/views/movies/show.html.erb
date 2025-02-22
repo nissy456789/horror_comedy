@@ -28,7 +28,8 @@
   <%= render 'reviews/review' %> <!-- 投稿されたレビューを表示 -->
   <%= render 'reviews/form', review: @review, movie: @movie %>
 
-  <a href="https://twitter.com/intent/tweet?text=こみてらっ!&url=https://horror-comedy.onrender.com" target="_blank">
+  <%= display_meta_tags(default_meta_tags) %>
+  <a href="https://twitter.com/intent/tweet?text=こみてらっ！&url=https://horror-comedy.onrender.com" target="_blank">
     シェア
   </a>
   </div>
