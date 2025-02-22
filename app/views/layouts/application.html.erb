@@ -14,6 +14,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= display_meta_tags(default_meta_tags) %>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="こみてらっ！">
+    <meta name="twitter:description" content="怖くないB級ホラー映画紹介アプリです#ホラー映画">
+    <meta name="twitter:image" content="<%= image_url('komitera2.jpg') %>">
+    <meta name="twitter:url" content="<%= request.original_url %>">
   </head>
 
   <body>

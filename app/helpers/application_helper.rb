@@ -16,7 +16,7 @@ module ApplicationHelper
             title: 'こみてらっ！',  # ページ固有のタイトル
             description: '怖くないB級ホラー映画紹介アプリです',  # ページ固有の説明
             type: 'website',
-            url: request.original_url,  # 現在のページのURLを取得
+            url: 'https://horror-comedy.onrender.com',  # 現在のページのURLを取得
             image: image_url('komitera2.jpg'),  # ページ固有の画像
             local: 'ja-JP'
           },
@@ -26,7 +26,7 @@ module ApplicationHelper
             title: 'こみてらっ！',  # ページ固有のTwitterタイトル
             description: '怖くないB級ホラー映画紹介アプリです#ホラー映画',  # ページ固有のTwitter説明
             image: image_url('komitera2.jpg'),  # ページ固有のTwitter画像
-            url: request.original_url  # 現在のページのURLを取得
+            url: 'https://horror-comedy.onrender.com'
           }
         }
       end
