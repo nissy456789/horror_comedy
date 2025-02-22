@@ -1,5 +1,5 @@
 <body class= "bg-black">
-<div class="h-screen w-screen bg-black">
+<div class="h-screen w-screen bg-black text-white">
   <div class="w-1/4">
     <!-- サイドバーの内容 -->
   </div>
@@ -24,9 +24,13 @@
     <%= render 'bookmark_buttons', movie: @movie %>
     <p class = "text-white mx-10">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
     <%= render 'watched_buttan', movie: @movie %>
-  </div>
+
   <%= render 'reviews/review' %> <!-- 投稿されたレビューを表示 -->
   <%= render 'reviews/form', review: @review, movie: @movie %>
 
+  <a href="https://twitter.com/intent/tweet?text=こみてらっ!B級ホラーホラー映画初心者&url=https://horror-comedy.onrender.com" target="_blank">
+    シェア
+  </a>
+  </div>
 </div>
 </body>
