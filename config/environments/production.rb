@@ -89,6 +89,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.hosts << 'xn--28jvb3dvb.com'
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
@@ -96,12 +97,12 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  config.action_mailer.default_url_options = { host: 'https://horror-comedy.onrender.com' }
+  config.action_mailer.default_url_options = { host: 'https://xn--28jvb3dvb.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'horror-comedy.onrender.com', #自分のアプリのドメイン
+    domain:               'xn--28jvb3dvb.com', #自分のアプリのドメイン
     user_name:            ENV['MAILER_SENDER'],
     password:             ENV['MAILER_PASSWORD'],
     authentication:       'plain',
