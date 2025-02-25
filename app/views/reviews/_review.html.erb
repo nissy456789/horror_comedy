@@ -1,5 +1,4 @@
 <div class="flex items-center justify-center bg-black text-white p-3">
-  <h3>レビュー一覧</h3>
   <table>
   <% @reviews.uniq(&:body).each do |review| %>
     <tr id="review-<%= review.id %>">

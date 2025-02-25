@@ -24,7 +24,8 @@
     <%= render 'bookmark_buttons', movie: @movie %>
     <p class = "text-white mx-10">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
     <%= render 'watched_buttan', movie: @movie %>
-
+  </div>
+  <h1>レビュー一覧</h1>
   <%= render 'reviews/review' %> <!-- 投稿されたレビューを表示 -->
   <%= render 'reviews/form', review: @review, movie: @movie %>
 
@@ -32,6 +33,6 @@
   <a href="https://twitter.com/intent/tweet?text=こみてらっ！&url=https://xn--28jvb3dvb.com" target="_blank">
     シェア
   </a>
-  </div>
+  
 </div>
 </body>
