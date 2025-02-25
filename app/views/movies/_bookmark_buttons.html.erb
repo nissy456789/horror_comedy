@@ -5,7 +5,7 @@
     <% else %>
       <%= render 'bookmark', { movie: @movie } %>
     <% end %>
-  <% else %>
-    <%= link_to 'ブックマークしよう！', user_session_path, class: 'btn btn-primary' %>
+    <% else %>
+    <%= link_to 'ブックマークしよう！', user_session_path %>
   <% end %>
 </div>

@@ -1,8 +1,8 @@
-<div class="h-screen w-screen bg-gray-700 text-center">
-  <h1 class="margin-top text-white">レビュー編集</h1>
+<div class="h-screen w-screen bg-black text-center">
+  <h1 class="margin-top text-white text-4xl text-white">レビュー編集</h1>
     <%= form_with model: [@movie, @review], local: true do |f| %><!-- shallow設定をしていないので2つ指定する必要がある -->
     <%= f.label :body, class: "form-label" %>
-    <%= f.text_area :body, class: "form-control mb-3", rows: "4", placeholder: Review.human_attribute_name(:body) %>
-    <%= f.submit '更新', class: "btn btn-primary" %>
+    <%= f.text_area :body, class: "bg-white form-control mb-3", rows: "4", placeholder: "レビュー本文" %>
+    <%= f.submit '更新', class: "bg-orange-400" %>
   <% end %>
 </div>

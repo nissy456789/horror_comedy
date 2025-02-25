@@ -10,7 +10,7 @@
                     <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
                         <%= f.label :body, class: "form-label" %>
                         <%= f.text_area :body, class: "form-control mb-3 bg-white", rows: "4", placeholder:"レビュー本文" %>
-                        <%= f.submit '投稿', class: "btn btn-primary" %>
+                        <%= f.submit '投稿' %>
                     <% end %>
                 </div>
             </div>
@@ -26,7 +26,7 @@
         <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
             <%= f.label :body, class: "form-label" %>
             <%= f.text_area :body, class: "form-control mb-3 bg-white", rows: "4", placeholder:"レビュー本文" %>
-            <%= f.submit '投稿', class: "btn btn-primary bg-orange-400" %>
+            <%= f.submit '投稿', class: "bg-orange-400" %>
         <% end %>
     </div>
 </div>
