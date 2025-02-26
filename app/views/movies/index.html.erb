@@ -3,7 +3,7 @@
 
   <%= search_form_for @q, url: movies_path, method: :get do |f| %>
     <%= f.search_field :title_cont, placeholder: "映画タイトルで検索", class: "form-control text-black bg-white" %>
-    <%= f.submit '検索', class: "bg-orange-400" %>
+    <%= f.submit '検索', class: "bg-orange-400 w-10 h-10 text-black"%>
   <% end %>
 
   <div class="flex flex-wrap cjustify-center w-full p-4"> <!-- 画像を中央に配置 -->

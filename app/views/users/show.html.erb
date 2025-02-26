@@ -1,14 +1,10 @@
-<div class="h-screen w-screen bg-black text-center text-white">
+<div class="h-screen w-screen bg-black text-center text-white p-5">
 <h1 class="text-3xl font-bold mb-6">マイページ</h1>
   <h1>名前</h1>
   <h1><%= @user.name %></h1>
-  <%= link_to "#", class: "edit-comment-link" do %>
-    編集
-  <% end %>
+
   <h1>メールアドレス</h1>
   <h1><%= @user.email %></h1>
-  <%= link_to "#", class: "edit-comment-link" do %>
-  編集
-  <% end %>
+
   <%= render partial: 'users/user_review' %>
 </div>

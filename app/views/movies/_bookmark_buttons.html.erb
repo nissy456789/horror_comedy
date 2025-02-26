@@ -6,6 +6,6 @@
       <%= render 'bookmark', { movie: @movie } %>
     <% end %>
     <% else %>
-    <%= link_to 'ブックマークしよう！', user_session_path %>
+    <%= link_to 'ブックマークしよう！', user_session_path, class: "w-40 h-40 text-black"%>
   <% end %>
 </div>
