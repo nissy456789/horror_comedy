@@ -7,12 +7,12 @@
 
       <div class="field">
         <%= f.label :ユーザー名, class: "block text-lg font-medium text-gray-700" %>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 bg-white text-black" %>
       </div>
 
       <div class="field">
         <%= f.label :メールアドレス, class: "block text-lg font-medium text-gray-700" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 bg-white text-black" %>
       </div>
 
       <div class="field">
@@ -20,12 +20,12 @@
         <% if @minimum_password_length %>
           <em class="text-sm text-gray-500">(最低 <%= @minimum_password_length %> 文字)</em>
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 bg-white text-black" %>
       </div>
 
       <div class="field">
         <%= f.label :パスワード確認, class: "block text-lg font-medium text-gray-700" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 bg-white text-black" %>
       </div>
 
       <div class="actions">

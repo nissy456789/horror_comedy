@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center min-h-screen bg-black text-white"> <!-- min-h-screenに変更 -->
-  <h1 class="text-4xl mt-4">作品一覧</h1> <!-- 上部に配置 -->
+  <h1 class="text-5xl mt-4">作品一覧</h1> <!-- 上部に配置 -->
 
   <%= search_form_for @q, url: movies_path, method: :get do |f| %>
     <%= f.search_field :title_cont, placeholder: "映画タイトルで検索", class: "form-control text-black bg-white" %>
