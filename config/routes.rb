@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'logout', to: 'sessions#destroy', as: 'logout'
   devise_for :users,controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
+    passwords: "users/passwords" 
   }
 
   #ログアウト用ルーティングです。turbo_methodがうまく機能しないため設定しました。
