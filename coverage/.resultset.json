@@ -58,6 +58,30 @@
           null
         ]
       },
+      "/myapp/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/myapp/app/controllers/horror_comedys_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/myapp/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
@@ -76,23 +100,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {}
-      },
-      "/myapp/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
           0
         ],
         "branches": {}
@@ -126,15 +133,6 @@
           0,
           0,
           null,
-          0
-        ],
-        "branches": {}
-      },
-      "/myapp/app/controllers/horror_comedys_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
           0
         ],
         "branches": {}
@@ -647,6 +645,6 @@
         "branches": {}
       }
     },
-    "timestamp": 1741095737
+    "timestamp": 1741236984
   }
 }
