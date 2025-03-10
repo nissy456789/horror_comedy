@@ -34,7 +34,8 @@ services:
       db:
         condition: service_healthy
   chrome:
-    image: seleniarm/standalone-chromium:latest
+    image: seleniarm/standalone-chromium:114.0
+    shm_size: 1012m
     ports:
       - 4444:4444
 volumes:

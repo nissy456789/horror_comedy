@@ -58,6 +58,39 @@
           null
         ]
       },
+      "/myapp/app/controllers/movies_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
       "/myapp/app/controllers/application_controller.rb": {
         "lines": [
           null,
@@ -67,10 +100,18 @@
           1,
           null,
           1,
-          2,
+          13,
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/myapp/app/models/watched.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -78,6 +119,64 @@
         "lines": [
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/myapp/app/controllers/reviews_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -137,40 +236,6 @@
         ],
         "branches": {}
       },
-      "/myapp/app/controllers/movies_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
-      },
       "/myapp/app/controllers/recommends_controller.rb": {
         "lines": [
           0,
@@ -225,65 +290,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {}
-      },
-      "/myapp/app/controllers/reviews_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
           0
         ],
         "branches": {}
@@ -634,17 +640,8 @@
           0
         ],
         "branches": {}
-      },
-      "/myapp/app/models/watched.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {}
       }
     },
-    "timestamp": 1741430918
+    "timestamp": 1741583042
   }
 }

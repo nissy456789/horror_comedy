@@ -1,49 +1,4 @@
 <div class="relative">
-  <!-- メニューボタン -->
-  <button id="menuButton" class="bg-orange-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-orange-600 lg:hidden">
-    メニュー ▼
-  </button>
-
-  <!-- ドロップダウンメニュー -->
-  <ul id="dropdownMenu" class="absolute left-0 mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg hidden lg:block">
-
-  <li class="px-4 py-2 hover:bg-gray-100">
-    <%= link_to "作品一覧" , movies_path, class: "block text-gray-800" %>
-  </li>
-
-
-    <li class="px-4 py-2 hover:bg-gray-100">
-      <%= link_to "ランキング" , ranking_watcheds_path, class: "block text-gray-800" %>
-    </li>
-
-    <li class="px-4 py-2 hover:bg-gray-100">
-      <%= link_to "あなたへおすすめ", recommends_path, class: "block text-gray-800" %>
-    </li>
-    <li class="px-4 py-2 hover:bg-gray-100">
-      <%= link_to "観たい！一覧", bookmarks_path, class: "block text-gray-800" %>
-    </li>
-
-    <% if user_signed_in? %>
-      <li class="px-4 py-2 hover:bg-gray-100">
-        <%= link_to 'マイページ', user_path(current_user), class: "block text-gray-800" %>
-      </li>
-      <li class="px-4 py-2 hover:bg-gray-100">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "block text-gray-800" %>
-      </li>
-    <% else %>
-      <li class="px-4 py-2 hover:bg-gray-100">
-        <%= link_to "ログイン", user_session_path, class: "block text-gray-800" %>
-      </li>
-    <% end %>
-
-    <li class="px-4 py-3 hover:bg-gray-100">
-        <%= link_to "お問合せ", "https://forms.gle/zsRgRHCv9Box48jT6", class: "block text-gray-800" %>
-      </li>
-
-    <li class="px-4 py-2 hover:bg-gray-100">
-      <%= link_to "プライバシーポリシー", "https://www.kiyac.app/privacypolicy/iKJlBH2wuM9NGRhYexTb", class: "block text-gray-800" %>
-    </li>
-  </ul>
 
   <!-- サイドバーコンテンツ (画面サイズが1024px以上の時) -->
   <div class="hidden lg:block fixed top-0 left-0 h-full w-1/7 bg-black text-black">
@@ -73,7 +28,7 @@
     <li class="px-4 py-2 hover:bg-gray-100 flex items-center ">
       <%= link_to bookmarks_path, class: "block text-black flex items-center inline-block bg-orange-400 px-2 py-1" do %>
         <%= image_tag 'bookmark.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
-        観たい！一覧
+        ブックマーク一覧
       <% end %>
     </li>
 
