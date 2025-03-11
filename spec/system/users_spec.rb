@@ -36,6 +36,12 @@ RSpec.describe "Users", type: :system do
         expect(page).to have_link('ログイン', visible: true)
       end
     end
+
+    contex 'マイページに遷移する' do
+      it 'ユーザー名とメールアドレスが記述されている' do
+        visit 
+      end
+    end
   end
 end
 
