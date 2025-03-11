@@ -37,9 +37,15 @@ RSpec.describe "Users", type: :system do
       end
     end
 
-    contex 'マイページに遷移する' do
+    context 'マイページに遷移する' do
       it 'ユーザー名とメールアドレスが記述されている' do
-        visit 
+        visit new_user_session_path
+        fill_in 'メールアドレス', with: user.email
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログイン'
+        click_link 'マイページ'
+        expect(page).to have_content user.name
+        expect(page).to have_content user.email
       end
     end
   end

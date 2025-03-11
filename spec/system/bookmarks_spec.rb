@@ -22,8 +22,7 @@ RSpec.describe "Bookmarks", type: :system do
         fill_in 'メールアドレス', with: user.email
         fill_in 'パスワード', with: user.password
         click_button 'ログイン'
-        visit movie_path(movie)
-        expect(page).to have_link 'ブックマークしよう'
+        expect(page).to have_content '観たい！'
       end
     end
   end

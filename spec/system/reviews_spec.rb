@@ -17,4 +17,19 @@ RSpec.describe "Reviews", type: :system do
       end
     end
   end
+
+  describe '自分のレビューがある時' do
+    context '削除ボタンを押す' do
+      it '削除成功' do
+        user = User.create(email: 'runtekun@example.com', password: 'password')
+        login(user)
+        visit movie_path(movie)
+        expect(page).to have_selector('#review-form', visible: true)
+        fill_in 'review[body]', with: 'テスト' 
+        click_button '投稿'
+        click_button '削除'
+        expect(page).not_to have_content 'テスト'
+      end
+    end
+  end
 end
