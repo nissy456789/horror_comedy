@@ -18,4 +18,5 @@ RSpec.describe "Movies", type: :system do
       end
     end
   end
+
 end
