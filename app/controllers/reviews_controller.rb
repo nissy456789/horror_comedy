@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def create
     review = current_user.reviews.build(review_params)
-    review.movie_id = params[:movie_id]
+    movie_id = params[:movie_id]
     if review.save
       redirect_to movie_path(review.movie), success: '投稿してくれてありがとう！'
     else

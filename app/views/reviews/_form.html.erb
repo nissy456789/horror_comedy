@@ -1,32 +1,14 @@
-<div class="relative">
-    <ul id="dropdownMenu" class="absolute mt-2 w-48 bg-orange-500 text-white rounded-md shadow-lg lg:hidden">
-        <!-- ドロップダウンメニュー -->
-        <li class="px-4 py-2 bg-white text-black top-0 right-0">
-            <div class="lg:hidden">
-                <button id="toggle-form" class="btn btn-secondary bg-orange-400">レビュー投稿</button>
-                <div class="hidden" id="review-form-dropdown">
-                    <h2 class=" font-bold mb-3">レビュー投稿</h2>
-                    <h2>※ログインしてから投稿してください</h2>
-                    <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
-                        <%= f.label :body, class: "form-label" %>
-                        <%= f.text_area :body, class: "form-control mb-3 bg-white", rows: "4", placeholder:"レビュー本文" %>
-                        <%= f.submit '投稿' %>
-                    <% end %>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
+<div class="min-h-screen relative">
 
-<!-- 1024px以上の時に表示されるレビュー投稿フォーム -->
-<div class="hidden lg:block fixed top-0 right-0 bg-white text-black p-4 shadow-md rounded-md w-80" id="review-form">
+  <div id="review-form" class="sticky bottom-0 bg-white text-black p-4 shadow-md rounded-md w-full md:w-80 mx-auto">
     <h2 class="text-lg font-bold mb-3">レビュー投稿</h2>
     <div>
-        <h2>※ログインしてから投稿してください</h2>
-        <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
-            <%= f.label :body, class: "form-label" %>
-            <%= f.text_area :body, class: "form-control mb-3 bg-white", rows: "4", placeholder:"レビュー本文" %>
-            <%= f.submit '投稿', class: "bg-orange-400 text-black w-20 h-10" %>
-        <% end %>
+      <h2 class="text-sm mb-2">※ログインしてから投稿してください</h2>
+      <%= form_with model: @review, url: movie_reviews_path(@movie) do |f| %>
+          <%= f.label :body, class: "form-label" %>
+          <%= f.text_area :body, class: "form-control mb-3 bg-white", rows: "4", placeholder:"レビュー本文" %>
+          <%= f.submit '投稿', class: "bg-orange-400 text-black w-20 h-10" %>
+      <% end %>
     </div>
+  </div>
 </div>

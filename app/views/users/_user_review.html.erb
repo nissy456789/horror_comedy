@@ -3,7 +3,7 @@
   
   <div class="space-y-4">
     <% @reviews.each do |review| %>
-      <div class="bg-gray-800 rounded-lg shadow-md p-6">
+      <div class="grid grid-cols-3 gap-4 bg-gray-800 rounded-lg shadow-md p-6">
         <p class="text-lg"><%= review.body %></p>
       </div>
     <% end %>
