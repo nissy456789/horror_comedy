@@ -1,8 +1,10 @@
-<div class="h-screen w-screen bg-black text-center">
-  <h1 class="margin-top text-white text-4xl text-white">レビュー編集</h1>
-    <%= form_with model: [@movie, @review], local: true do |f| %><!-- shallow設定をしていないので2つ指定する必要がある -->
-    <%= f.label :body, class: "form-label" %>
-    <%= f.text_area :body, class: "bg-white form-control mb-3", rows: "4", placeholder: "レビュー本文" %>
-    <%= f.submit '更新', class: "bg-orange-400" %>
-  <% end %>
+<div class="h-screen w-screen bg-black flex items-center justify-center">
+  <div class="text-center">
+    <h1 class="text-4xl text-white mb-6">レビュー編集</h1>
+    <%= form_with model: [@movie, @review], local: true do |f| %>
+      <%= f.label :body, class: "form-label" %>
+      <%= f.text_area :body, class: "bg-white form-control mb-3 w-full h-32 md:h-48 lg:h-64 text-black", placeholder: "レビュー本文" %>
+      <%= f.submit '更新', class: "rounded-lg w-20 text-black h-10 bg-orange-400" %>
+    <% end %>
+  </div>
 </div>
