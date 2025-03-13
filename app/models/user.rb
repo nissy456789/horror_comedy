@@ -14,7 +14,7 @@ class User < ApplicationRecord
   
      devise :omniauthable, omniauth_providers: %i[google_oauth2]
   
-    validates :uid, uniqueness: { scope: :provider }
+    validates :uid, uniqueness: { scope: :provider, allow_nil: true  }
 
   #自分のレビューか確認する
   def own?(object)
