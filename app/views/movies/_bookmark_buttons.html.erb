@@ -1,4 +1,4 @@
-<div class = "rounded-lg w-30 h-10 bg-orange-400 text-white">
+<div class = "rounded-lg bg-orange-400 text-white">
   <% if current_user %>
     <% if current_user.bookmark?(@movie) %>
       <%= render 'unbookmark', { movie: @movie } %>
