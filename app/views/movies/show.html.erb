@@ -22,7 +22,7 @@
 
   <div class="bg-black flex items-center justify-center p-4">
     <%= render 'bookmark_buttons', movie: @movie %>
-    <p class = "text-white mx-10">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
+    <p class = "text-white mx-10 text-xl">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
     <%= render 'watched_buttan', movie: @movie %>
   
     <a href="https://twitter.com/intent/tweet?text=こみてらっ！&url=https://xn--28jvb3dvb.com" target="_blank">
