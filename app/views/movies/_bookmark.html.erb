@@ -1,4 +1,4 @@
 <%= form_with url: bookmarks_path, method: :post, local: true, id: "bookmark-form-for-movie-#{@movie.id}" do |form| %>
   <%= form.hidden_field :movie_id, value: @movie.id %>
-  <%= form.submit '観たい！', class: 'rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl' %>
+  <%= form.submit '観たい！', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl' %>
 <% end %>

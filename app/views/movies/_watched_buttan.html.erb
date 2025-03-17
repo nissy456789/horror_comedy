@@ -6,6 +6,6 @@
       <%= render 'watched', { movie: @movie } %>
     <% end %>
   <% else %>
-    <%= link_to 'ブックマークしよう！', user_session_path, class: "rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl" %>
+    <%= link_to 'ブックマークしよう！', user_session_path, class: "hover:bg-orange-500 rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl" %>
   <% end %>
 </div>
