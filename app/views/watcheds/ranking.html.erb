@@ -6,9 +6,9 @@
   <div class = "p-6">
   <p class = "text-3xl">第<%= i %>位
     <h1>観た人数: <%= movie.watched_count %></h1>
-  <%= link_to movie_path(movie) do %>
+    <%= link_to movie_path(movie) do %>
       <%= image_tag movie.avatar.url, class: "w-full h-96 object-contain" %>
     <% end %>
-
-  </div>
+  <% end %>
+</div>
 </body>
