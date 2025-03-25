@@ -1,0 +1,12 @@
+<% if @movies.total_pages > 1 %>
+  <nav class="flex items-center justify-center space-x-2 mt-4">
+    <!-- 前へボタン -->
+    <% if @movies.prev_page %>
+      <%= link_to "前へ", movies_path(page: @movies.next_page), class: "px-3 py-2 bg-orange-400 text-black rounded-lg hover:bg-orange-500" %>
+    <% end %>
+
+    <% if @movies.next_page %>
+     <%= link_to "次へ", movies_path(page: @movies.next_page), class: "px-3 py-2 bg-orange-400 text-black rounded-lg hover:bg-orange-500" %>
+    <% end %>
+  </nav>
+<% end %>

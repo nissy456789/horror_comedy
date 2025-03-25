@@ -35,10 +35,7 @@
 
     <!-- ページネーション -->
     <div class="flex justify-center my-4">
-      <%= paginate @movies, 
-        previous_label: '<span class="px-4 py-2 bg-blue-500 text-white rounded-lg">前へ</span>', 
-        next_label: '<span class="px-4 py-2 bg-blue-500 text-white rounded-lg">次へ</span>',
-        class: 'flex space-x-2' %>
+      <%= paginate @movies %>
     </div>
   </div>
 </div>
