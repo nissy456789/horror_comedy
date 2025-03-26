@@ -4,7 +4,24 @@
 
 <% @ranked_movies.each.with_index(1) do |movie, i| %>
   <div class = "p-6">
-  <p class = "text-3xl">第<%= i %>位
+  <% if i == 1 %> 
+  <tr>
+    <td><%= image_tag("first.jpg") %></td>
+  </tr>
+  <% elsif i == 2 %>
+  <tr>
+    <td><%= image_tag("second.jpg") %></td>
+  </tr>
+  <% elsif i == 3 %>
+  <tr>
+    <td><%= image_tag("third.jpg") %></td>
+  </tr>
+  <% else %> 
+  <tr>
+    <td><%= i %>位</td>
+  </tr>
+  <% end %>
+
     <h1>観た人数: <%= movie.watched_count %></h1>
     <%= link_to movie_path(movie) do %>
       <%= image_tag movie.avatar.url, class: "w-full h-96 object-contain" %>
