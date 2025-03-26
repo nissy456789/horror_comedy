@@ -1,31 +1,52 @@
-<body class="bg-black text-white">
-<div class="flex flex-col items-center min-h-screen bg-black"> 
-<h1 class= "text-5xl">ランキング</h1>
+<div class="flex">
+  <!-- サイドバー -->
+  <div class="w-1/5 bg-black min-h-screen"></div>
 
-<% @ranked_movies.each.with_index(1) do |movie, i| %>
-  <div class = "p-6">
-  <% if i == 1 %> 
-  <tr>
-    <td><%= image_tag("first.jpg") %></td>
-  </tr>
-  <% elsif i == 2 %>
-  <tr>
-    <td><%= image_tag("second.jpg") %></td>
-  </tr>
-  <% elsif i == 3 %>
-  <tr>
-    <td><%= image_tag("third.jpg") %></td>
-  </tr>
-  <% else %> 
-  <tr>
-    <td><%= i %>位</td>
-  </tr>
-  <% end %>
+  <!-- メインコンテンツ -->
+  <div class="w-4/5 flex flex-col items-center min-h-screen bg-black text-white mx-auto">
+    <h1 class="text-5xl mb-8 mt-10 mr-[90px]">ランキング</h1>
 
-    <h1>観た人数: <%= movie.watched_count %></h1>
-    <%= link_to movie_path(movie) do %>
-      <%= image_tag movie.avatar.url, class: "w-full h-96 object-contain" %>
-    <% end %>
-  <% end %>
+    <div class="container mx-auto flex flex-col items-center">
+      <% @ranked_movies.each.with_index(1) do |movie, i| %>
+        <% if i == 1 %>
+          <!-- 1位の映画 -->
+          <div class="bg-white border-4 border-yellow-500 shadow-xl rounded-lg p-6 flex items-center w-4/5 max-w-4xl gap-4">
+            <!-- ポスター画像 -->
+            <div class="w-1/3 flex justify-center">
+              <%= link_to movie_path(movie), class: "block w-full h-full" do %>
+                <%= image_tag movie.avatar.url, class: "max-w-full max-h-full object-contain rounded-lg" %>
+              <% end %>
+            </div>
+
+            <!-- 映画情報 -->
+            <div class="w-2/3 pl-6">
+              <h2 class="text-2xl font-bold text-black mb-2"> <%= image_tag("first.jpg", class: "w-32 h-32 mb-2") %> <%= movie.title %></h2>
+              <h3 class="text-black text-lg mb-4">観た人数: <%= movie.watched_count %></h3>
+              <p class="text-black text-sm leading-relaxed"><%= movie.description.truncate(150) %></p>
+            </div>
+          </div>
+
+          <!-- 2位と3位の映画 -->
+          <div class="grid grid-cols-2 gap-40 mt-10">
+            <% [@ranked_movies[1], @ranked_movies[2]].each_with_index do |movie, index| %>
+              <% if movie.present? %>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden p-4 w-72 flex flex-col items-center">
+                  <%= image_tag(index == 0 ? "second.jpg" : "third.jpg", class: "w-28 h-28 mb-2") %>
+
+                  <div class="p-2 text-center w-full">
+                    <h3 class="text-lg font-bold text-black"><%= movie.title %></h3>
+                    <h4 class="text-black text-md">観た人数: <%= movie.watched_count %></h4>
+                  </div>
+                  <%= link_to movie_path(movie), class: "block w-full h-64 flex justify-center items-center bg-black rounded-lg" do %>
+                    <%= image_tag movie.avatar.url, class: "max-w-full max-h-full object-contain" %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-</body>
