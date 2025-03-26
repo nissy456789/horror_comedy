@@ -15,11 +15,11 @@
       <% end %>
     </div>
 
-    <!-- 映画カードリスト（右側 3/4 に配置） -->
+    <!-- 映画カードリスト-->
     <div class="container mx-auto flex">
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         <% @movies.each do |movie| %>
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden p-4 h-88 w-64 flex flex-col items-center"> <!-- 2枚目のポスターの上にスペースを作る -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden p-4 h-88 w-64 flex flex-col items-center">
             <% if movie.avatar.present? %>
               <%= link_to movie_path(movie), class: "block w-full h-full flex justify-center items-center bg-black" do %>
                 <%= image_tag movie.avatar.url, class: "max-w-full max-h-full object-contain" %>

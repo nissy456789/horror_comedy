@@ -1,19 +1,27 @@
-<div class="flex flex-col items-center min-h-screen bg-black text-white">
-<h2 class = "text-white text-4xl" >あなたへのおすすめ映画</h2>
+<div class="flex">
+  <!-- サイドバー -->
+  <div class="w-1/5 bg-black min-h-screen"></div>
 
-<% if @recommend_movies.present? %>
-  <ul>
-    <% @recommend_movies.each do |movie| %>
-      <li>
-      <%= link_to movie_path(movie) do %> <!-- 画像をリンクにして詳細画面へ遷移する -->
-        <%= image_tag movie.avatar.url,
-                      class: "w-full h-96 object-contain" %>
+  <div class="w-4/5 flex flex-col items-center min-h-screen bg-black text-white mx-auto">
+    <h2 class="text-white text-4xl mt-10">あなたへのおすすめ映画</h2>
+    
+    <div class="flex flex-col min-h-screen bg-black text-white p-6">
+  <% if @recommend_movies.present? %>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+      <% @recommend_movies.each do |movie| %>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden p-4 h-88 w-64 flex flex-col items-center m-16">
+          <%= link_to movie_path(movie), class: "block w-full h-full flex justify-center items-center bg-black" do %>
+            <%= image_tag movie.avatar.url, class: "max-w-full max-h-full object-contain" %>
+          <% end %>
+          <div class="p-2 text-center w-full">
+            <h3 class="text-lg font-bold text-black"><%= movie.title %></h3>
+          </div>
+        </div>
       <% end %>
-      </li>
-    <% end %>
-  </ul>
+    </div>
   <% else %>
-   <h1 class = "p-4">ログインしてブックマークをして下さい</h1>
+    <h1 class="p-4">ログインしてブックマークをして下さい</h1>
+  <% end %>
+</div>
 
-<% end %>
 </div>
