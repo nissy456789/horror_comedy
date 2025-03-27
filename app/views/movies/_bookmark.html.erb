@@ -1,4 +1,6 @@
 <%= form_with url: bookmarks_path, method: :post, local: true, id: "bookmark-form-for-movie-#{@movie.id}" do |form| %>
   <%= form.hidden_field :movie_id, value: @movie.id %>
-  <%= form.submit '観たい！', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl' %>
+  <%= button_tag type: 'submit', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center bg-orange-400 px-2 py-1 text-xl' do %>
+    <%= image_tag("book.jpg", class: "w-6 h-6 mr-2") %> 観たい！
+  <% end %>
 <% end %>

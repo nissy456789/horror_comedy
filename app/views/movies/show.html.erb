@@ -24,10 +24,12 @@
     <%= render 'bookmark_buttons', movie: @movie %>
     <p class = "text-white mx-10 text-xl">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
     <%= render 'watched_buttan', movie: @movie %>
-  
-    <a href="https://twitter.com/intent/tweet?text=こみてらっ！&url=https://xn--28jvb3dvb.com" target="_blank">
-      <%= image_tag 'Xshere.jpg', style: "width: 50px; height: auto;" %>
-    </a>
+    <div class = "px-10">
+      <a href="https://twitter.com/intent/tweet?text=こみてらっ！&url=https://xn--28jvb3dvb.com" target="_blank">
+        <%= image_tag 'Xshere.jpg', style: "width: 50px; height: auto;" %>
+        <h1>で共有</h1>
+      </a>
+    </div>
   </div>
   <h1>レビュー一覧</h1>
   <%= render 'reviews/review' %> <!-- 投稿されたレビューを表示 -->

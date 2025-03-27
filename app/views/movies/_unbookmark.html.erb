@@ -1,3 +1,5 @@
 <%= form_with url: unbookmark_movie_path(movie_id: @movie.id), method: :delete, local: true, id: "unbookmark-form-for-movie-#{@movie.id}" do |form| %>
-  <%= form.submit '観たくない！！', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl' %>
+  <%= button_tag type: 'submit', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center bg-orange-400 px-2 py-1 text-xl' do %>
+    <%= image_tag("bookok.jpg", class: "w-6 h-6 mr-2") %> 保存済み
+  <% end %>
 <% end %>
