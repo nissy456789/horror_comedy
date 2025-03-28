@@ -1,4 +1,7 @@
 <%= form_with url: watcheds_path, method: :post, local: true, id: "watched-form-for-movie-#{@movie.id}" do |form| %>
   <%= form.hidden_field :movie_id, value: @movie.id %>
-  <%= form.submit '観た！', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl' %>
+  <%= button_tag type: 'submit', class: 'hover:bg-orange-500 rounded-lg block text-black flex items-center bg-orange-400 px-2 py-1 text-xl' do %>
+    <%= image_tag("kirakira.jpg", class: "w-6 h-6 mr-2") %> 観た！
+  <% end %>
 <% end %>
+

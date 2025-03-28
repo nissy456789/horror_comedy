@@ -1,17 +1,16 @@
 <body class="bg-black">
-<div class="flex items-center justify-center">
+<div class="flex items-center justify-center m-10">
   <%= image_tag 'komitera.jpg', style: "width: 600px; height: auto;" %>
 </div>
 
 <div class="bg-black text-white text-center p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
-  <h2 class="text-3xl font-bold mb-6">このアプリについて</h2>
-  <div class="space-y-4 text-lg leading-relaxed">
+  <div class="space-y-4 text-xl leading-relaxed">
     <p>B級ホラー映画や怖くないホラー映画を紹介するアプリです。</p>
-    <p>気になる作品があったら「観たい！」ボタンを押して保存しましょう。</p>
+    <p>気になる作品があったら <%= image_tag("mitaiii.jpg", class: "inline w-18 h-10") %>を押して保存しましょう。</p>
     <p>ブックマークとして保存されます。</p>
-    <p>もう観たよ！！って作品がある時は「観たよ！」ボタンを押して下さいね。</p>
-    <p>観た人が多い作品はランキングにしています。</p>
-    <p>レコメンド機能もあるので、よかったら試して下さい！</p>
+    <p>もう観たよ！！って作品がある時は<%= image_tag("mita.jpg", class: "inline w-18 h-10") %>を押して下さいね。</p>
+    <p>注目の作品はランキングにしています。</p>
+    <p>レコメンド機能もあるので観てね！！</p>
   </div>
   <div class="mt-8">
     <%= button_to 'さぁ！まだ観ぬ世界へ！！', movies_path, method: :get, class: 'px-6 py-3 bg-orange-500 text-black font-semibold rounded-lg shadow-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2' %>
