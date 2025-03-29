@@ -1,10 +1,8 @@
 <body class= "bg-black">
-<div class="h-screen w-screen bg-black text-white">
-  <div class="w-1/4">
-    <!-- サイドバーの内容 -->
-  </div>
+<div class="text-white">
+  <div class="w-1/4"></div>
 
-  <div class="flex-1 flex flex-col items-center justify-center text-center text-white p-3">
+  <div class="flex-1 flex flex-col items-center justify-center text-center p-3">
     <div class="movie-image">
       <%= image_tag @movie.avatar.url, class: 'w-96 h-96 object-contain' if @movie.avatar? %>
     </div>
@@ -20,7 +18,7 @@
     </div>
   </div>
 
-  <div class="bg-black flex items-center justify-center p-4">
+  <div class="flex items-center justify-center p-4">
     <%= render 'bookmark_buttons', movie: @movie %>
     <p class = "text-white mx-10 text-xl">観た人数: <%= Watched.where(movie_id: @movie.id).count %></p>
     <%= render 'watched_buttan', movie: @movie %>
@@ -31,11 +29,10 @@
       </a>
     </div>
   </div>
-  <h1>レビュー一覧</h1>
-  <%= render 'reviews/review' %> <!-- 投稿されたレビューを表示 -->
-  <%= render 'reviews/form', review: @review, movie: @movie %>
 
+  <%= render 'reviews/form', review: @review, movie: @movie %>
+  <%= render 'reviews/review' %>
   <%= display_meta_tags(default_meta_tags) %>
-  
+
 </div>
 </body>
