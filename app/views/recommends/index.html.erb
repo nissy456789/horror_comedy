@@ -1,30 +1,29 @@
-<div class="flex">
-  <!-- サイドバー -->
-  <div class="w-1/5 bg-black min-h-screen"></div>
+<div class="flex flex-col lg:flex-row">
+  <div class="w-full lg:w-1/5 bg-black"></div>
 
-  <div class="w-4/5 flex flex-col items-center min-h-screen bg-black text-white mx-auto">
-    <h2 class="text-white text-4xl mt-10 mr-[220px]">あなたへのおすすめ映画</h2>
+  <div class="w-full lg:w-4/5 flex flex-col items-center min-h-screen bg-black text-white mx-auto">
+    <h2 class="text-white text-4xl mt-10 lg:mr-[220px] text-center">あなたへのおすすめ映画</h2>
     
-    <div class="flex flex-col min-h-screen bg-black text-white p-6">
+    <div class="flex flex-col min-h-screen bg-black text-white p-6 items-center">
       <% if @recommend_movies.present? %>
         <% @recommend_movies.each do |movie| %>
-          <div class="bg-white shadow-xl rounded-lg p-6 flex items-center w-4/5 max-w-4xl gap-4 my-6">
+          <div class="bg-white shadow-xl rounded-lg p-6 flex flex-col lg:flex-row items-center w-4/5 lg:w-5/6 max-w-4xl gap-4 my-6">
             <!-- ポスター画像 -->
-            <div class="w-1/3 flex justify-center">
+            <div class="w-full lg:w-1/3 flex justify-center">
               <%= link_to movie_path(movie), class: "block w-full h-full" do %>
                 <%= image_tag movie.avatar.url, class: "max-w-full max-h-full object-contain rounded-lg" %>
               <% end %>
             </div>
 
             <!-- 映画情報 -->
-            <div class="w-2/3 pl-6">
+            <div class="w-full lg:w-2/3 pl-6 text-center lg:text-left">
               <h3 class="text-2xl font-bold text-black mb-2"><%= movie.title %></h3>
               <p class="text-black text-sm leading-relaxed"><%= movie.description.truncate(150) %></p>
             </div>
           </div>
         <% end %>
       <% else %>
-        <h1 class="p-4">ログインしてブックマークをして下さい</h1>
+        <h1 class="p-4 text-center">ログインしてブックマークをして下さい</h1>
       <% end %>
     </div>
   </div>
