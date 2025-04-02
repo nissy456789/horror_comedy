@@ -1,10 +1,10 @@
-<div class="h-screen inline-block bg-black text-center text-white p-8">
+<div class="h-screen flex flex-col items-center justify-center bg-black text-center text-white p-8">
   <h1 class="text-3xl font-bold mb-6">投稿したレビュー一覧</h1>
   
-  <div class="space-y-4">
+  <div class="space-y-4 w-full">
     <% @reviews.each do |review| %>
-      <div class="grid grid-cols-3 gap-4 bg-gray-200 text-black rounded-lg p-6 w-auto">
-        <p class="text-l"><%= review.body %></p>
+      <div class="max-w-2xl mx-auto bg-white text-black rounded-lg p-6 flex items-center justify-center">
+        <p class="text-l text-center line-clamp-12 overflow-hidden"><%= review.body %></p>
       </div>
     <% end %>
   </div>
