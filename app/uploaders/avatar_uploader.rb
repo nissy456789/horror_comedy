@@ -1,8 +1,8 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   if Rails.env.production?
-    storage :fog # 本番環境ではfogを使用
+    storage :fog
   else
-    storage :file # 開発環境とテスト環境ではfileを使用
+    storage :file
   end
 
   def store_dir

@@ -9,14 +9,12 @@ Rails.application.routes.draw do
     passwords: "users/passwords" 
   }
 
-  #ログアウト用ルーティングです。turbo_methodがうまく機能しないため設定しました。
-
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  #トップページ設定用
+
   root 'horror_comedys#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -27,7 +25,7 @@ Rails.application.routes.draw do
   resources :movies, only: %i[index show]  do
     resources :reviews, only: %i[create edit update destroy]
     collection do
-      get :bookmark#ブックマークを一覧を表示
+      get :bookmark
     end 
   end
 

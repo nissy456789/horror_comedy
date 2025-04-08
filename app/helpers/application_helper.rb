@@ -9,23 +9,23 @@ module ApplicationHelper
           charset: 'utf-8',
           description: '初心者向けの笑えるホラー映画を紹介しています',
           keywords: 'ホラー,恐怖,初心者,スリル',
-          canonical: 'https://xn--28jvb3dvb.com',  # 修正が必要
+          canonical: 'https://xn--28jvb3dvb.com',
           separator: '|',
           og: {
             site_name: :site,
-            title: 'こみてらっ！',  # ページ固有のタイトル
-            description: '怖くないB級ホラー映画紹介アプリです',  # ページ固有の説明
+            title: 'こみてらっ！',
+            description: '怖くないB級ホラー映画紹介アプリです',
             type: 'website',
-            url: 'https://xn--28jvb3dvb.com',  # 現在のページのURLを取得
-            image: image_url('komitera2.jpg'),  # ページ固有の画像
+            url: 'https://xn--28jvb3dvb.com',
+            image: image_url('komitera2.jpg'),
             local: 'ja-JP'
           },
           twitter: {
             card: 'summary_large_image',
             site: '@obvyamdrss',
-            title: 'こみてらっ！',  # ページ固有のTwitterタイトル
-            description: '怖くないB級ホラー映画紹介アプリです#ホラー映画',  # ページ固有のTwitter説明
-            image: image_url('komitera2.jpg'),  # ページ固有のTwitter画像
+            title: 'こみてらっ！',
+            description: '怖くないB級ホラー映画紹介アプリです#ホラー映画',
+            image: image_url('komitera2.jpg'),
             url: 'https://xn--28jvb3dvb.com'
           }
         }
