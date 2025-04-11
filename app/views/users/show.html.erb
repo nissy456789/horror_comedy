@@ -1,11 +1,13 @@
-<div class="h-screen w-screen bg-black text-center text-white p-5">
-<h1 class="text-3xl font-bold mb-6">マイページ</h1>
-  <h1>名前</h1>
-  <h1><%= @user.name %></h1>
-  <%= link_to '編集', edit_user_registration_path, class: "text-center hover:bg-orange-500 rounded-lg block text-black flex items-center inline-block bg-orange-400 px-2 py-1 text-xl" %>
+<div class="h-screen w-screen bg-black text-center text-white ">
+<h1 class="text-3xl font-bold mb-6 p-10">マイページ</h1>
+  <div class="space-y-4 text-2xl">
+    <h1>名前</h1>
+    <h1><%= @user.name %></h1>
+  
+    <h1>メールアドレス</h1>
+    <h1><%= @user.email %></h1>
+    <%= link_to '編集', edit_user_registration_path, class: "text-center hover:bg-orange-500 rounded-lg text-black  items-center inline-block bg-orange-400 px-2 py-1 text-xl w-1/5" %>
 
-  <h1>メールアドレス</h1>
-  <h1><%= @user.email %></h1>
-
-  <%= render partial: 'users/user_review' %>
+    <%= render partial: 'users/user_review' %>
+  </div>
 </div>
