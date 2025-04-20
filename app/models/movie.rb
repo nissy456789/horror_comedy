@@ -7,7 +7,7 @@ class Movie < ApplicationRecord
   has_many :recommends, dependent: :destroy
   private
 
-  def self.ransackable_attributes(auth_object = nil)#決められた情報しか検索しない
+  def self.ransackable_attributes(auth_object = nil)
     ["avatar", "description", "id", "id_value", "title"]
   end
 end

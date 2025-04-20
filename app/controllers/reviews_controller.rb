@@ -18,16 +18,16 @@ class ReviewsController < ApplicationController
 
   def update
     @movie = Movie.find(params[:movie_id])
-    @review = Review.find(params[:id])  # IDでレビューを検索する
+    @review = Review.find(params[:id]) 
 
-    if @review.update(review_params)     # ストロングパラメータを使って更新
-      redirect_to movie_path(@movie), notice: 'レビューが更新されました！'  # 更新成功時のリダイレクト
+    if @review.update(review_params)
+      redirect_to movie_path(@movie), notice: 'レビューが更新されました！'
     else
-      render :edit  # 更新失敗時は編集画面を再表示する
+      render :edit
     end
   end
 
-  def destroy#映画とレビューのIDを取得することで対象物を明確にする
+  def destroy
     @movie = Movie.find(params[:movie_id])
     @review = current_user.reviews.find(params[:id])
     @review.destroy!
@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.where(user_id: current_user.id).select('DISTINCT ON (body) *') # ログインしているユーザーの投稿した重複のないレビュー取得
+    @reviews = Review.where(user_id: current_user.id).select('DISTINCT ON (body) *')
   end
 
   private
