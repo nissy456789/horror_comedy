@@ -113,4 +113,5 @@ Figma：https://www.figma.com/design/j8l654IioatkAUz10JWezL/%E3%81%93%E3%81%BF%E
 
 
 ### ER図
-![](https://i.gyazo.com/4e4daf2d1a5ebfe235fa895b52ae5ddc.png)
+![](https://github.com/user-attachments/assets/07b1d74f-a51e-4508-8a85-d7f82542c13c)
+
