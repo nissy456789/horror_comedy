@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post 'logout', to: 'sessions#destroy', as: 'logout'
   devise_for :users,controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
-    passwords: "users/passwords" 
+    passwords: "users/passwords",
+    registrations: 'users/registrations'
   }
 
 

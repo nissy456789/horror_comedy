@@ -21,13 +21,13 @@ class RecommendsController < ApplicationController
 
   #類似ユーザーのブックマークから映画を提案する 
   def recommend_movies
-    # 未ログインの場合、フラッシュメッセージを設定
+
     if current_user.nil?
       return # 画面遷移せずに処理を終了
     end
   
     bookmarked_movie_ids = current_user.bookmark_movies.pluck(:movie_id)
-    similar_users = similar_users # この変数は適切に定義されているか確認してね
+    similar_users = similar_users
   
     if similar_users.present?
       similar_user_movie_ids = Bookmark.where(user_id: similar_users.ids)
