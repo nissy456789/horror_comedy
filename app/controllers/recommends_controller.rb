@@ -47,7 +47,7 @@ class RecommendsController < ApplicationController
     if recommended_movie_ids.empty?
       Movie.all.sample(3) 
     else
-      Movie.where(id: recommended_movie_ids).sample(3)  # レコメンドがある場合は従来通り
+      Movie.where(id: recommended_movie_ids).sample(3)
     end
   end
 end

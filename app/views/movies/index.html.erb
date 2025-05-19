@@ -2,9 +2,9 @@
   <!-- サイドバー -->
   <div class="w-1/5 bg-black min-h-screen"></div>
 
-  <!-- コンテンツ部分 -->
+
   <div class="w-4/5 flex flex-col min-h-screen bg-black text-white p-4">
-    <!-- 作品一覧と検索フォームをポスターの中央に配置 -->
+
     <div class="w-full flex flex-col items-center mb-8">
       <h1 class="text-5xl mt-4 p-4 mr-[110px]">作品一覧</h1>
       <%= search_form_for @q, url: movies_path, method: :get do |f| %>
@@ -27,6 +27,8 @@
             <% end %>
             <div class="p-2 text-center w-full">
               <h3 class="text-lg font-bold text-black"><%= movie.title %></h3>
+              <h3 class="text-lg font-bold text-black"><%= "びっくり度#{movie.surprise_level}" %></h3>
+              <h3 class="text-lg font-bold text-black"><%= "グロさ度#{movie.gore_level}" %></h3>
             </div>
           </div>
         <% end %>
