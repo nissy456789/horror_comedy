@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_04_25_050022) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_27_055002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,6 +71,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_25_050022) do
     t.string "avatar"
     t.integer "surprise_level"
     t.integer "gore_level"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
   create_table "recommends", force: :cascade do |t|
@@ -133,6 +135,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_25_050022) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "movie_categories", "categories", column: "categories_id"
   add_foreign_key "movie_categories", "movies"
+  add_foreign_key "movies", "users"
   add_foreign_key "recommends", "bookmarks"
   add_foreign_key "recommends", "movies"
   add_foreign_key "recommends", "users"

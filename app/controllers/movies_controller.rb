@@ -11,6 +11,14 @@ class MoviesController < ApplicationController
     @reviews = @movie.reviews.includes(:user).order(created_at: :desc)
   end
 
+  def new 
+    @movie = current_user.movies.build
+  end
+
+  def create
+    @movie = current_user.movies.build(movie_params)
+  end
+
   private
 
   def require_login

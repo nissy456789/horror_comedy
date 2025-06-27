@@ -1,8 +1,14 @@
+user = User.find_or_create_by!(email: "special@example.com") do |u|
+  u.password = "password"
+  u.password_confirmation = "password"
+end
+
 Movie.find_or_create_by(title: 'ウィリーズ・ワンダーランド') do |movie|
   movie.description = '車の修理費を稼ぐため、廃れたテーマパークでの清掃を引き受けた男に待ちける悪夢のアニマトロニクス。ニコラス・ケイジが遊園地の人形と死闘を繰り広げるホラー・アクション！'
   movie.avatar = File.open(Rails.root.join('app/assets/images/willyswonderland.jpg'))
   movie.surprise_level = '3'
   movie.gore_level = '2'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ロンドンゾンビ紀行') do |movie|
@@ -10,13 +16,15 @@ Movie.find_or_create_by(title: 'ロンドンゾンビ紀行') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/londonzombiposter.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = '3'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: '黄龍の村') do |movie|
   movie.description = 'これ、村の決まりやから。キャンプ場への道中携帯も繋がらない山中で車がパンクし助けを求めて迷い歩く若者達がたどり着いた「切龍村」その近妙な村を舞台に狂気の集団と若者たちの想像を絶する惨劇が勃発するスリラーホラー'
   movie.avatar = File.open(Rails.root.join('app/assets/images/kiryuunomura.jpg'))
-  movie.surprise_level ='2'
+  movie.surprise_level = '2'
   movie.gore_level = '1'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'キャビン') do |movie|
@@ -24,6 +32,7 @@ Movie.find_or_create_by(title: 'キャビン') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/CABIN.jpg'))
   movie.surprise_level = '3'
   movie.gore_level = '4'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'タッカーとデイル 史上最悪にツイてないヤツら') do |movie|
@@ -31,6 +40,7 @@ Movie.find_or_create_by(title: 'タッカーとデイル 史上最悪にツイ�
   movie.avatar = File.open(Rails.root.join('app/assets/images/takkar&dail.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = '5'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'キラージーンズ') do |movie|
@@ -38,6 +48,7 @@ Movie.find_or_create_by(title: 'キラージーンズ') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/killer_jeans.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '2'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ショーン・オブ・ザ・デッド') do |movie|
@@ -45,45 +56,45 @@ Movie.find_or_create_by(title: 'ショーン・オブ・ザ・デッド') do |mo
   movie.avatar = File.open(Rails.root.join('app/assets/images/shown_of_the_dead.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '1'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'マリグナント 狂暴な悪夢 ') do |movie|
-  movie.description = 'ある日を境に、目の前で恐ろしい殺人を目撃するという「悪夢体験」に苛まれはじめるマディソン。予測不能な素早い動きと超人的能力で、人々を殺していく漆黒の殺人鬼。彼女が夢の中で見た殺人の数々は、現実世界でも起きてしまう――。 殺人が起きる度、マディソンはリアルな幻覚かのように殺人現場を疑似体験し、少しずつ自身の秘められた過去に導かれていく。そして、ついにその邪悪な手がマディソンの元へ届くとき、その“狂暴な悪夢”の正体＝G が明らかに…!?
-怖い雰囲気ですが、(アクション映画だと思って観てもらえたら大丈夫です)。'
+  movie.description = 'ある日を境に、目の前で恐ろしい殺人を目撃するという「悪夢体験」に苛まれはじめるマディソン。予測不能な素早い動きと超人的能力で、人々を殺していく漆黒の殺人鬼。彼女が夢の中で見た殺人の数々は、現実世界でも起きてしまう――。 殺人が起きる度、マディソンはリアルな幻覚かのように殺人現場を疑似体験し、少しずつ自身の秘められた過去に導かれていく。そして、ついにその邪悪な手がマディソンの元へ届くとき、その“狂暴な悪夢”の正体＝G が明らかに…!?怖い雰囲気ですが、(アクション映画だと思って観てもらえたら大丈夫です)。'
   movie.avatar = File.open(Rails.root.join('app/assets/images/malignant.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = '2'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ゾンビーワールドへようこそ') do |movie|
-  movie.description = '高校生でボーイスカウトのベン、カーター、オギーはクラブで女の子と遊びたくて仕方がない。ある日、キャンプを抜け出してパーティー会場へ行く途中、なんとゾンビ化した住人たちが襲ってきた!
-間一髪のところを美人ウエイトレスに助けられた3人は、ボーイスカウトで 身につけた様々なワザを駆使して、一致団結しようとするのだが…。(下ネタ多めです。)'
+  movie.description = '高校生でボーイスカウトのベン、カーター、オギーはクラブで女の子と遊びたくて仕方がない。ある日、キャンプを抜け出してパーティー会場へ行く途中、なんとゾンビ化した住人たちが襲ってきた!間一髪のところを美人ウエイトレスに助けられた3人は、ボーイスカウトで 身につけた様々なワザを駆使して、一致団結しようとするのだが…。(下ネタ多めです。)'
   movie.avatar = File.open(Rails.root.join('app/assets/images/welcome_zombie.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '4'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ゾンビーバー') do |movie|
-  movie.description = '田舎道を走る一台のトラック、いい加減なおしゃべり運転のせいで、積み荷の汚染廃棄物が、かわいいビーバーの住む湖にドボン！そんなビーバーたちの湖の近くに、男子禁制の女子会キャンプを楽しむためにやってきた
-仲良し3人組（メアリー、ゾーイ、ジェン）。一晩かけて恋愛話やSEXトークを楽しむ3人、しかし彼女たちの彼氏や元彼（サム、トミー、バック）が突然小屋に乱入してきてセックスとお酒で大混乱。そんな中、ジェンがバスタブで凶暴なビーバーに遭遇！トミーの徹底的な撲殺で事なきを得たのだが、翌日、捨てたはずのビーバーの死体がどこにもない。しかも、逃げたような血の足跡が・・・。今、極限の恐怖が彼らを襲う！！（笑）
-
-'
+  movie.description = '田舎道を走る一台のトラック、いい加減なおしゃべり運転のせいで、積み荷の汚染廃棄物が、かわいいビーバーの住む湖にドボン！そんなビーバーたちの湖の近くに、男子禁制の女子会キャンプを楽しむためにやってきた仲良し3人組（メアリー、ゾーイ、ジェン）。一晩かけて恋愛話やSEXトークを楽しむ3人、しかし彼女たちの彼氏や元彼（サム、トミー、バック）が突然小屋に乱入してきてセックスとお酒で大混乱。そんな中、ジェンがバスタブで凶暴なビーバーに遭遇！トミーの徹底的な撲殺で事なきを得たのだが、翌日、捨てたはずのビーバーの死体がどこにもない。しかも、逃げたような血の足跡が・・・。今、極限の恐怖が彼らを襲う！！（笑）'
   movie.avatar = File.open(Rails.root.join('app/assets/images/zobieebar.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '4'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: '温泉シャーク') do |movie|
   movie.description = '⼈気の温泉地に突如現れた脅威︕温泉地 vs 古代ザメ ⼈類との戦いが今、始まろうとするのであった。市⻑の万巻が主導する複合型巨⼤観光施設の建設が進む S 県暑海（あつみ）市では、温泉客が忽然と姿を消す連続失踪事件が発⽣していた。しかも被害者はその後、海でサメに襲われた遺体として発⾒されるのであった。捜査に乗り出した警察署⻑、束（つか）と海洋⽣物学博⼠の巨勢（こせ）は、太古の昔から蘇った獰猛なサメが暑海各地の温泉を⾃由に⾏き来し、⼈々を襲っているという驚愕の事実を突き⽌めるのだが･･･'
   movie.avatar = File.open(Rails.root.join('app/assets/images/onsen.shark.jpg'))
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'コカインベア') do |movie|
-  movie.description = '(グロいけど面白いです)麻薬密輸人のアンドリュー・カーター・ソーントン2世がFBIに追われ、飛行機からコカインが入ったバッグを投げ捨てた。
-しかし、こともあろうに巨大なクマが、その白い粉を食べてしまった。偶然にもジョージア州の森に集った刑事、ギャング、森林警備隊、観光客たちが、大量のコカインを食べて暴れ回る“頂点捕食者”と遭遇したとき、いまだかつてない惨劇が起きる!'
+  movie.description = '(グロいけど面白いです)麻薬密輸人のアンドリュー・カーター・ソーントン2世がFBIに追われ、飛行機からコカインが入ったバッグを投げ捨てた。しかし、こともあろうに巨大なクマが、その白い粉を食べてしまった。偶然にもジョージア州の森に集った刑事、ギャング、森林警備隊、観光客たちが、大量のコカインを食べて暴れ回る“頂点捕食者”と遭遇したとき、いまだかつてない惨劇が起きる!'
   movie.avatar = File.open(Rails.root.join('app/assets/images/cocain_bear_.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = '4'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'リトル・モンスターズ') do |movie|
@@ -91,14 +102,15 @@ Movie.find_or_create_by(title: 'リトル・モンスターズ') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/little_monsters.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '3'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ハッピー・デス・デイ') do |movie|
-  movie.description = 'ビッチが誕生日に何度も殺されまくる?自己中でイケイケな女子大生が、“殺される誕生日”を何度もくり返しながら殺人鬼の謎に迫っていくタイムループ型学園ホラー!
-無名のキャスト&監督にもかかわらず大作『ブレードランナー2049』を押さえ、全米初登場No.1を獲得!'
+  movie.description = 'ビッチが誕生日に何度も殺されまくる?自己中でイケイケな女子大生が、“殺される誕生日”を何度もくり返しながら殺人鬼の謎に迫っていくタイムループ型学園ホラー!無名のキャスト&監督にもかかわらず大作『ブレードランナー2049』を押さえ、全米初登場No.1を獲得!'
   movie.avatar = File.open(Rails.root.join('app/assets/images/happy_death_day.jpg'))
   movie.surprise_level = '5'
   movie.gore_level = '1'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ヴィーガンズ・ハム') do |movie|
@@ -106,21 +118,25 @@ Movie.find_or_create_by(title: 'ヴィーガンズ・ハム') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/viigans_hum.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = 1
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'サンドウィッチ') do |movie|
   movie.description = 'アホでさえないコンビが森で射撃ごっこしてて女性を撃ち殺してしまい、秒で呪われる短編ホラーコメディ(18分)。SAMANSAというアプリで観れます。'
   movie.avatar = File.open(Rails.root.join('app/assets/images/sandwich.jpg'))
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ゾンビランド') do |movie|
   movie.description = 'ゾンビパンデミックが広がる世界で、生存者の青年コロンバスは「生存のルール」を守りながら旅を続け、個性的な仲間たち（タラハシー、ウィチタ、リトルロック）と出会います。彼らは友情を深めつつ、ゾンビと戦いながら楽園を目指します。笑いとアクション満載のホラーコメディです'
   movie.avatar = File.open(Rails.root.join('app/assets/images/zombieland.jpg'))
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'カメラを止めるな！') do |movie|
   movie.description = 'とある自主映画の撮影隊が山奥の廃墟でゾンビ映画を撮影していた。本物を求める監督は中々OKを出さずテイクは42テイクに達する。そんな中、撮影隊に本物のゾンビが襲いかかる!大喜びで撮影を続ける監督、次々とゾンビ化していく撮影隊の面々。映画史をぬり変えるワンカットゾンビサバイバル！……を撮ったヤツらの話。'
   movie.avatar = File.open(Rails.root.join('app/assets/images/kamera_nonstop!.jpg'))
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'デストイレ') do |movie|
@@ -128,6 +144,7 @@ Movie.find_or_create_by(title: 'デストイレ') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/death_toilet.jpg'))
   movie.surprise_level = '0'
   movie.gore_level = '1'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'キラー・ナマケモノ') do |movie|
@@ -135,6 +152,7 @@ Movie.find_or_create_by(title: 'キラー・ナマケモノ') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/killarr_namakemono.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '4'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'ファイブ・ナイツ・アット・フレディーズ') do |movie|
@@ -142,6 +160,7 @@ Movie.find_or_create_by(title: 'ファイブ・ナイツ・アット・フレデ
   movie.avatar = File.open(Rails.root.join('app/assets/images/5naitu.at.huredli.jpg'))
   movie.surprise_level = '2'
   movie.gore_level = '2'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: '戦慄怪奇ワールド・コワすぎ！') do |movie|
@@ -149,6 +168,7 @@ Movie.find_or_create_by(title: '戦慄怪奇ワールド・コワすぎ！') do 
   movie.avatar = File.open(Rails.root.join('app/assets/images/kowasugi.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = '0'
+  movie.user_id = user.id
 end
 
 Movie.find_or_create_by(title: 'それがいる森') do |movie|
@@ -156,4 +176,5 @@ Movie.find_or_create_by(title: 'それがいる森') do |movie|
   movie.avatar = File.open(Rails.root.join('app/assets/images/soregairumori.jpg'))
   movie.surprise_level = '1'
   movie.gore_level = '1'
+  movie.user_id = user.id
 end

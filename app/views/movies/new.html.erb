@@ -1,0 +1,26 @@
+<div class="min-h-screen flex items-center justify-center text-black">
+  <div class="w-full max-w-md bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4 text-center">映画を投稿する</h1>
+
+    <%= form_with model: @movie, local: true do |f| %>
+      <div class="mb-4">
+        <%= f.label :title, "タイトル", class: "block font-semibold mb-1" %>
+        <%= f.text_field :title, class: "w-full border border-gray-300 rounded px-3 py-2 bg-white" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :description, "映画説明", class: "block font-semibold mb-1" %>
+        <%= f.text_area :description, class: "w-full border border-gray-300 rounded px-3 py-2 bg-white"%>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :image, "画像", class: "block font-semibold mb-1 bg-white" %>
+        <%= f.file_field :image, class: "w-full" %>
+      </div>
+
+      <div class="text-center">
+        <%= f.submit "投稿する", class: "bg-orange-500 hover:bg-orange-600 font-bold py-2 px-4 rounded" %>
+      </div>
+    <% end %>
+  </div>
+</div>
