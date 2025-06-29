@@ -12,14 +12,23 @@ class MoviesController < ApplicationController
   end
 
   def new 
-    @movie = current_user.movies.build
+    @movie = Movie.new
   end
 
   def create
-    @movie = current_user.movies.build(movie_params)
+    @movie = current_user.movies.build(movie_params) # ← build（user_id付きインスタンス生成）
+    if @movie.save                                   # ← save（DB保存）
+      redirect_to movies_path
+    else
+      render :new
+    end
   end
 
   private
+
+  def movie_params
+    params.require(:movie).permit(:title, :description, :avatar, :surprise_level, :gore_level)
+  end
 
   def require_login
     unless logged_in?
