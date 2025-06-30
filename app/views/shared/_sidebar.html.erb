@@ -49,6 +49,13 @@
   <div class="hidden lg:block fixed top-0 left-0 h-full w-1/7 bg-black text-black">
 
     <ul class="list-none font-bold">
+    <li class="rounded-lg px-4 py-2 flex items-center ">
+      <%= link_to new_movie_path, class: "hover:bg-orange-500 rounded-lg block text-black flex items-center w-56 h-15 bg-orange-400 px-2 py-1" do %>
+        <%= image_tag 'recomend.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
+        投稿する
+      <% end %>
+    </li>
+
     <li class="rounded-lg px-4 py-2 flex items-center">
       <%= link_to movies_path, class: "hover:bg-orange-500 rounded-lg block text-black flex items-center w-56 h-15 bg-orange-400 px-2 py-1" do %>
         <%= image_tag 'film.jpg', style: "width: 50px; height: auto; margin-right: 10px;" %>
